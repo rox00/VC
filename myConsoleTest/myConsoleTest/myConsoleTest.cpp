@@ -73,6 +73,18 @@ public:
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	{// 栈分配内存由高到低，堆分配内存由低到高。
+
+		char array1[10];
+		char array2[10];
+
+		char *pArray3 = new char[10];
+		char *pArray4 = new char[10];
+		int dd3 = (int)&pArray3;
+		int dd4 = (int)&pArray4;
+		dd4 = 0;
+	}
+
 	//MyClass myclass;
 	Base *pa = new A();
 	pa->Fuction();
