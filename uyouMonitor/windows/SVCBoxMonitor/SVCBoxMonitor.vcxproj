@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4F2B2D2E-8A92-423E-BADD-6279E7A6F55A}</ProjectGuid>
+    <RootNamespace>SVCBoxMonitor</RootNamespace>
+    <Keyword>MFCActiveXProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>18797056</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
+    <IncludePath>$(Boost);..\..\share\include;..\..\share\include\ffmpeg-2.4.5-win32-dev\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\share\lib\windows;$(Boost)\stage\lib\win32\vs12;..\..\lib;..\..\share\include\ffmpeg-2.4.5-win32-dev\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\..\output\</OutDir>
+    <TargetName>$(ProjectName)D</TargetName>
+    <IntDir>$(ProjectDir)..\..\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
+    <IncludePath>$(Boost);..\..\share\include;..\..\share\include\ffmpeg-2.4.5-win32-dev\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\share\lib\windows;$(Boost)\stage\lib\win32\vs12;..\..\lib;..\..\share\include\ffmpeg-2.4.5-win32-dev\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\..\output\</OutDir>
+    <IntDir>$(ProjectDir)..\..\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;LOG4CPLUS_STATIC;FHD;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\SVCBoxMonitor.def</ModuleDefinitionFile>
+      <RegisterOutput>true</RegisterOutput>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>uafxcwd.lib;avcodec.lib;avdevice.lib;avfilter.lib;avformat.lib;avutil.lib;cscc.lib;postproc.lib;swresample.lib;swscale.lib</AdditionalDependencies>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>$(IntDir)SVCBoxMonitor.tlb</TypeLibraryName>
+      <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>cd $(TargetDir)
+$(ProjectDir)AxImp.exe  $(OutDir)$(TargetFileName)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;FHD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zm133 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\SVCBoxMonitor.def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <RegisterOutput>true</RegisterOutput>
+      <IgnoreSpecificDefaultLibraries>msvcprt.lib;msvcrt.lib;uafxcw.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>uafxcw.lib;libcmt.lib;avcodec.lib;avdevice.lib;avfilter.lib;avformat.lib;avutil.lib;cscc.lib;postproc.lib;swresample.lib;swscale.lib</AdditionalDependencies>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>$(IntDir)SVCBoxMonitor.tlb</TypeLibraryName>
+      <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>cd $(TargetDir)
+$(ProjectDir)AxImp.exe  $(OutDir)$(TargetFileName)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\share\cpp\jsoncpp\json_internalarray.inl" />
+    <None Include="..\..\share\cpp\jsoncpp\json_internalmap.inl" />
+    <None Include="..\..\share\cpp\jsoncpp\json_valueiterator.inl" />
+    <None Include="SVCBoxMonitor.def" />
+    <None Include="SVCBoxMonitor.ico" />
+    <None Include="SVCBoxMonitorCtrl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\share\cpp\jsoncpp\json_reader.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\share\cpp\jsoncpp\json_value.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\share\cpp\jsoncpp\json_writer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Common\AdbUtils.cpp" />
+    <ClCompile Include="..\Common\NetUtils.cpp" />
+    <ClCompile Include="Channel\IMEAppProtocol.cpp" />
+    <ClCompile Include="CommonDefine.cpp" />
+    <ClCompile Include="CVedioDlg.cpp" />
+    <ClCompile Include="GVAPPlayer.cpp" />
+    <ClCompile Include="Input\InputManager.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Input\KeyboardMapper.cpp" />
+    <ClCompile Include="Input\MouseOperationHandler.cpp" />
+    <ClCompile Include="Input\InputHookHelper.cpp" />
+    <ClCompile Include="Input\ScreenZoomHandler.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SVCBoxMonitor.cpp" />
+    <ClCompile Include="SVCBoxMonitorCtrl.cpp" />
+    <ClCompile Include="SVCBoxMonitorPropPage.cpp" />
+    <ClCompile Include="YUVRender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\share\cpp\jsoncpp\json_batchallocator.h" />
+    <ClInclude Include="..\..\share\cpp\jsoncpp\json_tool.h" />
+    <ClInclude Include="..\..\share\include\json\assertions.h" />
+    <ClInclude Include="..\..\share\include\json\autolink.h" />
+    <ClInclude Include="..\..\share\include\json\config.h" />
+    <ClInclude Include="..\..\share\include\json\features.h" />
+    <ClInclude Include="..\..\share\include\json\forwards.h" />
+    <ClInclude Include="..\..\share\include\json\json.h" />
+    <ClInclude Include="..\..\share\include\json\reader.h" />
+    <ClInclude Include="..\..\share\include\json\value.h" />
+    <ClInclude Include="..\..\share\include\json\version.h" />
+    <ClInclude Include="..\..\share\include\json\writer.h" />
+    <ClInclude Include="CommonDefine.h" />
+    <ClInclude Include="CVedioDlg.h" />
+    <ClInclude Include="GVAPPlayer.h" />
+    <ClInclude Include="Input\InputHookHelper.h" />
+    <ClInclude Include="Input\InputManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SVCBoxMonitor.h" />
+    <ClInclude Include="SVCBoxMonitorCtrl.h" />
+    <ClInclude Include="SVCBoxMonitorPropPage.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="YUVRender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SVCBoxMonitor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="SVCBoxMonitor.idl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="SVCBoxMonitor.rc" _x007B_9175A113-DD75-4E95-8A27-D0917AC9DE10_x007D_="CDSVCBoxMonitor" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

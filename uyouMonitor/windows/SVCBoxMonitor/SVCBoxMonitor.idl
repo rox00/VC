@@ -1,0 +1,65 @@
+// SVCBoxMonitor.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (SVCBoxMonitor.tlb) that will become a resource in
+// SVCBoxMonitor.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[uuid(F7CF1A20-6693-408C-9967-0F1C84D84676), version(1.0),
+  control ]
+library SVCBoxMonitorLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CSVCBoxMonitorCtrl
+	[ 
+		uuid(6F20C68B-855E-481E-9EC4-B938ED234EFE)
+	]
+	dispinterface _DSVCBoxMonitor
+	{
+		properties:
+		methods:
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] ULONG Start(ULONG bAutoReconnect, ULONG hwndVedio, BSTR strIP);
+			[id(2)] ULONG LoadKeyMapping(BSTR packageName);
+			[id(3)] ULONG SetKeyMappingOpen(SHORT open);
+			[id(4)] ULONG SaveKeyMappingConfig(BSTR configFile, BSTR content);
+			[id(5)] ULONG SetRunningApp(BSTR packageName);
+			[id(6)] ULONG OpenTaskManager();
+			[id(7)] ULONG CallAndroidBack();
+			[id(8)] ULONG CallAndroidHomeKey();
+			[id(9)] ULONG Exit();
+			[id(10)] void ClearTouchedKey();
+			[id(11)] void UpdateVedioRect(LONG l, LONG t, LONG r, LONG b);
+			[id(12)] void SetFlag(LONG nFlag, LONG value);
+			[id(13)] void UpdateDeviceSize(LONG deviceWidth, LONG deviceHeight);
+			[id(14)] void UpdateCollsepRc(LONG screenLeft, LONG screenTop, LONG screenRight, LONG screenBottom);
+	};
+
+	//  Event dispatch interface for CSVCBoxMonitorCtrl
+
+	[ 
+		uuid(C8D375E0-900B-4427-AA44-FD41BC68F53B)
+	]
+	dispinterface _DSVCBoxMonitorEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(1)] void NotifyConnectStateChanged(ULONG ulCurrentState);
+	};
+
+	//  Class information for CSVCBoxMonitorCtrl
+	[
+		uuid(6BB1915F-3D5E-43AD-B38A-B4ECE51C0BA9)
+	]
+	coclass SVCBoxMonitor
+	{
+		[default] dispinterface _DSVCBoxMonitor;
+		[default, source] dispinterface _DSVCBoxMonitorEvents;
+	};
+
+};

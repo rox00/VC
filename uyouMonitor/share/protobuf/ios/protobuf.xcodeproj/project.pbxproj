@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		470DB88F19A2EDF600B91088 /* protobuf-MultiArch */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 470DB89019A2EDF600B91088 /* Build configuration list for PBXAggregateTarget "protobuf-MultiArch" */;
+			buildPhases = (
+				470DB89319A2EE0900B91088 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "protobuf-MultiArch";
+			productName = "protobuf-MultiArch";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4700170F199BC1C00047571E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700170E199BC1C00047571E /* Foundation.framework */; };
+		479634BB199BC4FF0012DBAF /* descriptor_database.cc in Sources */ = {isa = PBXBuildFile; fileRef = 47963491199BC4FF0012DBAF /* descriptor_database.cc */; };
+		479634BC199BC4FF0012DBAF /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = 47963493199BC4FF0012DBAF /* descriptor.cc */; };
+		479634BD199BC4FF0012DBAF /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 47963495199BC4FF0012DBAF /* descriptor.pb.cc */; };
+		479634BE199BC4FF0012DBAF /* dynamic_message.cc in Sources */ = {isa = PBXBuildFile; fileRef = 47963497199BC4FF0012DBAF /* dynamic_message.cc */; };
+		479634BF199BC4FF0012DBAF /* extension_set_heavy.cc in Sources */ = {isa = PBXBuildFile; fileRef = 47963499199BC4FF0012DBAF /* extension_set_heavy.cc */; };
+		479634C0199BC4FF0012DBAF /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4796349A199BC4FF0012DBAF /* extension_set.cc */; };
+		479634C1199BC4FF0012DBAF /* generated_message_reflection.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4796349D199BC4FF0012DBAF /* generated_message_reflection.cc */; };
+		479634C2199BC4FF0012DBAF /* generated_message_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4796349F199BC4FF0012DBAF /* generated_message_util.cc */; };
+		479634C3199BC4FF0012DBAF /* coded_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634A2199BC4FF0012DBAF /* coded_stream.cc */; };
+		479634C4199BC4FF0012DBAF /* gzip_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634A5199BC4FF0012DBAF /* gzip_stream.cc */; };
+		479634C5199BC4FF0012DBAF /* printer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634A7199BC4FF0012DBAF /* printer.cc */; };
+		479634C6199BC4FF0012DBAF /* tokenizer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634A9199BC4FF0012DBAF /* tokenizer.cc */; };
+		479634C7199BC4FF0012DBAF /* zero_copy_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634AB199BC4FF0012DBAF /* zero_copy_stream.cc */; };
+		479634C8199BC4FF0012DBAF /* zero_copy_stream_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634AD199BC4FF0012DBAF /* zero_copy_stream_impl.cc */; };
+		479634C9199BC4FF0012DBAF /* zero_copy_stream_impl_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634AF199BC4FF0012DBAF /* zero_copy_stream_impl_lite.cc */; };
+		479634CA199BC4FF0012DBAF /* message_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634B1199BC4FF0012DBAF /* message_lite.cc */; };
+		479634CB199BC4FF0012DBAF /* message.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634B3199BC4FF0012DBAF /* message.cc */; };
+		479634CC199BC4FF0012DBAF /* reflection_ops.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634B5199BC4FF0012DBAF /* reflection_ops.cc */; };
+		479634CD199BC4FF0012DBAF /* repeated_field.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634B7199BC4FF0012DBAF /* repeated_field.cc */; };
+		479634CE199BC4FF0012DBAF /* service.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634B9199BC4FF0012DBAF /* service.cc */; };
+		479634F5199BC52C0012DBAF /* atomicops_internals_x86_gcc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634D7199BC52C0012DBAF /* atomicops_internals_x86_gcc.cc */; };
+		479634F6199BC52C0012DBAF /* atomicops_internals_x86_msvc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634D9199BC52C0012DBAF /* atomicops_internals_x86_msvc.cc */; };
+		479634F7199BC52C0012DBAF /* common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634DB199BC52C0012DBAF /* common.cc */; };
+		479634F8199BC52C0012DBAF /* once.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634DF199BC52C0012DBAF /* once.cc */; };
+		479634F9199BC52C0012DBAF /* stringprintf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634E3199BC52C0012DBAF /* stringprintf.cc */; };
+		479634FA199BC52C0012DBAF /* structurally_valid.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634E5199BC52C0012DBAF /* structurally_valid.cc */; };
+		479634FB199BC52C0012DBAF /* strutil.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634E6199BC52C0012DBAF /* strutil.cc */; };
+		479634FC199BC52C0012DBAF /* substitute.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634E8199BC52C0012DBAF /* substitute.cc */; };
+		479634FD199BC52C0012DBAF /* text_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634EC199BC52C0012DBAF /* text_format.cc */; };
+		479634FE199BC52C0012DBAF /* unknown_field_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634EE199BC52C0012DBAF /* unknown_field_set.cc */; };
+		479634FF199BC52C0012DBAF /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634F1199BC52C0012DBAF /* wire_format_lite.cc */; };
+		47963500199BC52C0012DBAF /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = 479634F3199BC52C0012DBAF /* wire_format.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47001709199BC1C00047571E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4700170B199BC1C00047571E /* libprotobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libprotobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4700170E199BC1C00047571E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		47001712199BC1C00047571E /* protobuf-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "protobuf-Prefix.pch"; sourceTree = "<group>"; };
+		47963491199BC4FF0012DBAF /* descriptor_database.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = descriptor_database.cc; path = ../../google/protobuf/descriptor_database.cc; sourceTree = "<group>"; };
+		47963493199BC4FF0012DBAF /* descriptor.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = descriptor.cc; path = ../../google/protobuf/descriptor.cc; sourceTree = "<group>"; };
+		47963495199BC4FF0012DBAF /* descriptor.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = descriptor.pb.cc; path = ../../google/protobuf/descriptor.pb.cc; sourceTree = "<group>"; };
+		47963497199BC4FF0012DBAF /* dynamic_message.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dynamic_message.cc; path = ../../google/protobuf/dynamic_message.cc; sourceTree = "<group>"; };
+		47963499199BC4FF0012DBAF /* extension_set_heavy.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = extension_set_heavy.cc; path = ../../google/protobuf/extension_set_heavy.cc; sourceTree = "<group>"; };
+		4796349A199BC4FF0012DBAF /* extension_set.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = extension_set.cc; path = ../../google/protobuf/extension_set.cc; sourceTree = "<group>"; };
+		4796349D199BC4FF0012DBAF /* generated_message_reflection.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = generated_message_reflection.cc; path = ../../google/protobuf/generated_message_reflection.cc; sourceTree = "<group>"; };
+		4796349F199BC4FF0012DBAF /* generated_message_util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = generated_message_util.cc; path = ../../google/protobuf/generated_message_util.cc; sourceTree = "<group>"; };
+		479634A2199BC4FF0012DBAF /* coded_stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coded_stream.cc; sourceTree = "<group>"; };
+		479634A5199BC4FF0012DBAF /* gzip_stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gzip_stream.cc; sourceTree = "<group>"; };
+		479634A7199BC4FF0012DBAF /* printer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = printer.cc; sourceTree = "<group>"; };
+		479634A9199BC4FF0012DBAF /* tokenizer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tokenizer.cc; sourceTree = "<group>"; };
+		479634AB199BC4FF0012DBAF /* zero_copy_stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zero_copy_stream.cc; sourceTree = "<group>"; };
+		479634AD199BC4FF0012DBAF /* zero_copy_stream_impl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zero_copy_stream_impl.cc; sourceTree = "<group>"; };
+		479634AF199BC4FF0012DBAF /* zero_copy_stream_impl_lite.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zero_copy_stream_impl_lite.cc; sourceTree = "<group>"; };
+		479634B1199BC4FF0012DBAF /* message_lite.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = message_lite.cc; path = ../../google/protobuf/message_lite.cc; sourceTree = "<group>"; };
+		479634B3199BC4FF0012DBAF /* message.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = message.cc; path = ../../google/protobuf/message.cc; sourceTree = "<group>"; };
+		479634B5199BC4FF0012DBAF /* reflection_ops.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = reflection_ops.cc; path = ../../google/protobuf/reflection_ops.cc; sourceTree = "<group>"; };
+		479634B7199BC4FF0012DBAF /* repeated_field.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = repeated_field.cc; path = ../../google/protobuf/repeated_field.cc; sourceTree = "<group>"; };
+		479634B9199BC4FF0012DBAF /* service.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = service.cc; path = ../../google/protobuf/service.cc; sourceTree = "<group>"; };
+		479634D7199BC52C0012DBAF /* atomicops_internals_x86_gcc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atomicops_internals_x86_gcc.cc; sourceTree = "<group>"; };
+		479634D9199BC52C0012DBAF /* atomicops_internals_x86_msvc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atomicops_internals_x86_msvc.cc; sourceTree = "<group>"; };
+		479634DB199BC52C0012DBAF /* common.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cc; sourceTree = "<group>"; };
+		479634DF199BC52C0012DBAF /* once.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = once.cc; sourceTree = "<group>"; };
+		479634E3199BC52C0012DBAF /* stringprintf.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stringprintf.cc; sourceTree = "<group>"; };
+		479634E5199BC52C0012DBAF /* structurally_valid.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = structurally_valid.cc; sourceTree = "<group>"; };
+		479634E6199BC52C0012DBAF /* strutil.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strutil.cc; sourceTree = "<group>"; };
+		479634E8199BC52C0012DBAF /* substitute.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = substitute.cc; sourceTree = "<group>"; };
+		479634EC199BC52C0012DBAF /* text_format.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = text_format.cc; path = ../../google/protobuf/text_format.cc; sourceTree = "<group>"; };
+		479634EE199BC52C0012DBAF /* unknown_field_set.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = unknown_field_set.cc; path = ../../google/protobuf/unknown_field_set.cc; sourceTree = "<group>"; };
+		479634F1199BC52C0012DBAF /* wire_format_lite.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wire_format_lite.cc; path = ../../google/protobuf/wire_format_lite.cc; sourceTree = "<group>"; };
+		479634F3199BC52C0012DBAF /* wire_format.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wire_format.cc; path = ../../google/protobuf/wire_format.cc; sourceTree = "<group>"; };
+		47963501199BC8C70012DBAF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47001708199BC1C00047571E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4700170F199BC1C00047571E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47001702199BC1C00047571E = {
+			isa = PBXGroup;
+			children = (
+				47001710199BC1C00047571E /* protobuf */,
+				4700170D199BC1C00047571E /* Frameworks */,
+				4700170C199BC1C00047571E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4700170C199BC1C00047571E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4700170B199BC1C00047571E /* libprotobuf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4700170D199BC1C00047571E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4700170E199BC1C00047571E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47001710199BC1C00047571E /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				47963501199BC8C70012DBAF /* config.h */,
+				479634CF199BC52C0012DBAF /* stubs */,
+				479634EC199BC52C0012DBAF /* text_format.cc */,
+				479634EE199BC52C0012DBAF /* unknown_field_set.cc */,
+				479634F1199BC52C0012DBAF /* wire_format_lite.cc */,
+				479634F3199BC52C0012DBAF /* wire_format.cc */,
+				47963491199BC4FF0012DBAF /* descriptor_database.cc */,
+				47963493199BC4FF0012DBAF /* descriptor.cc */,
+				47963495199BC4FF0012DBAF /* descriptor.pb.cc */,
+				47963497199BC4FF0012DBAF /* dynamic_message.cc */,
+				47963499199BC4FF0012DBAF /* extension_set_heavy.cc */,
+				4796349A199BC4FF0012DBAF /* extension_set.cc */,
+				4796349D199BC4FF0012DBAF /* generated_message_reflection.cc */,
+				4796349F199BC4FF0012DBAF /* generated_message_util.cc */,
+				479634A1199BC4FF0012DBAF /* io */,
+				479634B1199BC4FF0012DBAF /* message_lite.cc */,
+				479634B3199BC4FF0012DBAF /* message.cc */,
+				479634B5199BC4FF0012DBAF /* reflection_ops.cc */,
+				479634B7199BC4FF0012DBAF /* repeated_field.cc */,
+				479634B9199BC4FF0012DBAF /* service.cc */,
+				47001711199BC1C00047571E /* Supporting Files */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		47001711199BC1C00047571E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47001712199BC1C00047571E /* protobuf-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		479634A1199BC4FF0012DBAF /* io */ = {
+			isa = PBXGroup;
+			children = (
+				479634A2199BC4FF0012DBAF /* coded_stream.cc */,
+				479634A5199BC4FF0012DBAF /* gzip_stream.cc */,
+				479634A7199BC4FF0012DBAF /* printer.cc */,
+				479634A9199BC4FF0012DBAF /* tokenizer.cc */,
+				479634AB199BC4FF0012DBAF /* zero_copy_stream.cc */,
+				479634AD199BC4FF0012DBAF /* zero_copy_stream_impl.cc */,
+				479634AF199BC4FF0012DBAF /* zero_copy_stream_impl_lite.cc */,
+			);
+			name = io;
+			path = ../../google/protobuf/io;
+			sourceTree = "<group>";
+		};
+		479634CF199BC52C0012DBAF /* stubs */ = {
+			isa = PBXGroup;
+			children = (
+				479634D7199BC52C0012DBAF /* atomicops_internals_x86_gcc.cc */,
+				479634D9199BC52C0012DBAF /* atomicops_internals_x86_msvc.cc */,
+				479634DB199BC52C0012DBAF /* common.cc */,
+				479634DF199BC52C0012DBAF /* once.cc */,
+				479634E3199BC52C0012DBAF /* stringprintf.cc */,
+				479634E5199BC52C0012DBAF /* structurally_valid.cc */,
+				479634E6199BC52C0012DBAF /* strutil.cc */,
+				479634E8199BC52C0012DBAF /* substitute.cc */,
+			);
+			name = stubs;
+			path = ../../google/protobuf/stubs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4700170A199BC1C00047571E /* protobuf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4700172E199BC1C00047571E /* Build configuration list for PBXNativeTarget "protobuf" */;
+			buildPhases = (
+				47001707199BC1C00047571E /* Sources */,
+				47001708199BC1C00047571E /* Frameworks */,
+				47001709199BC1C00047571E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = protobuf;
+			productName = protobuf;
+			productReference = 4700170B199BC1C00047571E /* libprotobuf.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47001703199BC1C00047571E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Rui Chu";
+			};
+			buildConfigurationList = 47001706199BC1C00047571E /* Build configuration list for PBXProject "protobuf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 47001702199BC1C00047571E;
+			productRefGroup = 4700170C199BC1C00047571E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4700170A199BC1C00047571E /* protobuf */,
+				470DB88F19A2EDF600B91088 /* protobuf-MultiArch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		470DB89319A2EE0900B91088 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "CODE_BASE=${SRCROOT}/../../..\n${CODE_BASE}/tools/build-multiarch-ios.sh ${CODE_BASE}/share/lib/ios/lib${PROJECT_NAME}.a";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47001707199BC1C00047571E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479634F8199BC52C0012DBAF /* once.cc in Sources */,
+				47963500199BC52C0012DBAF /* wire_format.cc in Sources */,
+				479634BF199BC4FF0012DBAF /* extension_set_heavy.cc in Sources */,
+				479634C7199BC4FF0012DBAF /* zero_copy_stream.cc in Sources */,
+				479634BC199BC4FF0012DBAF /* descriptor.cc in Sources */,
+				479634FF199BC52C0012DBAF /* wire_format_lite.cc in Sources */,
+				479634CE199BC4FF0012DBAF /* service.cc in Sources */,
+				479634BD199BC4FF0012DBAF /* descriptor.pb.cc in Sources */,
+				479634C4199BC4FF0012DBAF /* gzip_stream.cc in Sources */,
+				479634CC199BC4FF0012DBAF /* reflection_ops.cc in Sources */,
+				479634CA199BC4FF0012DBAF /* message_lite.cc in Sources */,
+				479634FD199BC52C0012DBAF /* text_format.cc in Sources */,
+				479634FC199BC52C0012DBAF /* substitute.cc in Sources */,
+				479634F5199BC52C0012DBAF /* atomicops_internals_x86_gcc.cc in Sources */,
+				479634C1199BC4FF0012DBAF /* generated_message_reflection.cc in Sources */,
+				479634F6199BC52C0012DBAF /* atomicops_internals_x86_msvc.cc in Sources */,
+				479634FA199BC52C0012DBAF /* structurally_valid.cc in Sources */,
+				479634BB199BC4FF0012DBAF /* descriptor_database.cc in Sources */,
+				479634FB199BC52C0012DBAF /* strutil.cc in Sources */,
+				479634C9199BC4FF0012DBAF /* zero_copy_stream_impl_lite.cc in Sources */,
+				479634C2199BC4FF0012DBAF /* generated_message_util.cc in Sources */,
+				479634C0199BC4FF0012DBAF /* extension_set.cc in Sources */,
+				479634C3199BC4FF0012DBAF /* coded_stream.cc in Sources */,
+				479634F9199BC52C0012DBAF /* stringprintf.cc in Sources */,
+				479634F7199BC52C0012DBAF /* common.cc in Sources */,
+				479634CD199BC4FF0012DBAF /* repeated_field.cc in Sources */,
+				479634BE199BC4FF0012DBAF /* dynamic_message.cc in Sources */,
+				479634CB199BC4FF0012DBAF /* message.cc in Sources */,
+				479634C5199BC4FF0012DBAF /* printer.cc in Sources */,
+				479634C8199BC4FF0012DBAF /* zero_copy_stream_impl.cc in Sources */,
+				479634FE199BC52C0012DBAF /* unknown_field_set.cc in Sources */,
+				479634C6199BC4FF0012DBAF /* tokenizer.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4700172C199BC1C00047571E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4700172D199BC1C00047571E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4700172F199BC1C00047571E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DEPLOYMENT_LOCATION = NO;
+				DSTROOT = "$(SRCROOT)/../../../";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "protobuf/protobuf-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/..",
+					"$(SRCROOT)/protobuf",
+				);
+				INSTALL_PATH = /share/lib/ios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		47001730199BC1C00047571E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DEPLOYMENT_LOCATION = NO;
+				DSTROOT = "$(SRCROOT)/../../../";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "protobuf/protobuf-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/..",
+					"$(SRCROOT)/protobuf",
+				);
+				INSTALL_PATH = /share/lib/ios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		470DB89119A2EDF600B91088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		470DB89219A2EDF600B91088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47001706199BC1C00047571E /* Build configuration list for PBXProject "protobuf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4700172C199BC1C00047571E /* Debug */,
+				4700172D199BC1C00047571E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4700172E199BC1C00047571E /* Build configuration list for PBXNativeTarget "protobuf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4700172F199BC1C00047571E /* Debug */,
+				47001730199BC1C00047571E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		470DB89019A2EDF600B91088 /* Build configuration list for PBXAggregateTarget "protobuf-MultiArch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				470DB89119A2EDF600B91088 /* Debug */,
+				470DB89219A2EDF600B91088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47001703199BC1C00047571E /* Project object */;
+}

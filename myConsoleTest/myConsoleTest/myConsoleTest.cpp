@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <wtypes.h>
 using namespace std;
 /*************构造函数不能为虚函数**********************/
 class MyClass
@@ -71,8 +72,51 @@ public:
 };
 /************************************************/
 
+#define DEFINETEST 10;
 int _tmain(int argc, _TCHAR* argv[])
 {
+	{
+		int aa[5] = { 1, 2, 3, 4, 5 };
+		int *ptr = (int *)(&aa + 1);
+	}
+	{
+		BYTE aa[5] = { 66, 50, '\0', 71, 72 };
+		char bb[5] = { 66, 50, '\0', 71, 72 };
+		int sizea = sizeof(aa);
+		int sizeb = sizeof(bb);
+
+		int lenb = strlen(bb);
+
+		lenb = 0;
+
+		char *p = "string";
+
+		//*p = '2';
+		//cout << p << endl;
+	}
+
+	{
+		#define SQUARE(a) ((a)*(a))
+		int a = 5;
+		int b;
+		b = SQUARE(a++);
+		b = 0;
+	}
+
+	{
+		int a = 5;
+		int b;
+		int c = a++ + a++;
+		b = 0;
+	}
+	{
+		typedef union { short i; short k[1]; char c; } DATE;
+		struct data { short cat; DATE cow; double dog; } too;
+		int a = sizeof(DATE);
+		int b = sizeof(too);
+		a = 0;
+	}
+	//string str = DEFINETEST;
 	{// 栈分配内存由高到低，堆分配内存由低到高。
 
 		char array1[10];

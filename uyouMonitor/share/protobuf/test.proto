@@ -1,0 +1,11 @@
+package hello;
+
+message Hello{
+    required int32      id      = 1;        //user id
+    required string     name    = 2;        //user name
+    optional string     email   = 3;        //user email
+}
+
+message MyHello{
+	required Hello hello = 1;
+}

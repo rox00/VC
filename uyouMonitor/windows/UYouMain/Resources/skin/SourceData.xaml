@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ViewModel="clr-namespace:UYouMain.ViewModel"
+                    xmlns:local="clr-namespace:UYouMain"
+                    >
+
+    <!--<ViewModel:SetWndViewModel x:Key="ViewModel_SetWndViewModel"/>-->
+    <ViewModel:MainWindowModel x:Key="ViewModel_MainWindowModel"/>
+    <!--笔刷-->
+    <LinearGradientBrush x:Key="SliderBackground"  StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#59ccfc"/>
+        <GradientStop Offset="0.5" Color="#00b3fe"/>
+        <GradientStop Offset="1" Color="#59ccfc"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="SliderThumb"  StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#FFD9D3E8"/>
+        <!--<GradientStop Offset="1" Color="#dfdfdf"/>-->
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="SliderText"  StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#7cce45"/>
+        <GradientStop Offset="1" Color="#4ea017"/>
+    </LinearGradientBrush>
+
+    <ImageBrush x:Key="CollapseButton_ShrinkBrush" ImageSource="/UYouMain;component/Resources/imgs/black/收缩.png"/>
+    <ImageBrush x:Key="CollapseButton_OpenBrush" ImageSource="/UYouMain;component/Resources/imgs/black/打开.png"/>
+    <ImageBrush x:Key="moresetting1" ImageSource="/UYouMain;component/Resources/imgs/black/更多1.png"/>
+    <ImageBrush x:Key="moresetting2" ImageSource="/UYouMain;component/Resources/imgs/black/更多2.png"/>
+    <ImageBrush x:Key="minbrush" ImageSource="/UYouMain;component/Resources/imgs/black/最小化.png"/>
+    <ImageBrush x:Key="maxbrush" ImageSource="/UYouMain;component/Resources/imgs/black/最大化.png"/>
+    <ImageBrush x:Key="exitbrush" ImageSource="/UYouMain;component/Resources/imgs/black/关闭.png"/>
+
+    <Image x:Key="imgmin" Source="/UYouMain;component/Resources/imgs/black/最小化.png" />
+    <Image x:Key="imgmax" Source="/UYouMain;component/Resources/imgs/black/最大化.png" />
+    <Image x:Key="imgexit" Source="/UYouMain;component/Resources/imgs/black/关闭.png" />
+</ResourceDictionary>

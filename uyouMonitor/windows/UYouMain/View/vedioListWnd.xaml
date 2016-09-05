@@ -1,0 +1,35 @@
+﻿<Window x:Class="UYouMain.vedioListWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:viewModel="clr-namespace:UYouMain.ViewModel"
+        Title="vedioListWnd" MinHeight="300" MinWidth="300" ShowInTaskbar="False"
+        WindowStyle="None" AllowsTransparency="True" DataContext="{StaticResource ViewModel_MainWindowModel}"
+        Left="{Binding Path=_vedioListModel.WindowLeft, Mode=TwoWay}" Top="{Binding Path=_vedioListModel.WindowTop, Mode=TwoWay}" 
+        Height="{Binding Path=_vedioListModel.WindowHeight, Mode=TwoWay}" Width="{Binding Path=_vedioListModel.WindowWidth, Mode=TwoWay}" 
+        Visibility="{Binding Path=_vedioListModel.WndVisible, Mode=TwoWay}"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding _vedioListModel.LoadCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="IsVisibleChanged">
+            <i:InvokeCommandAction Command="{Binding DeviceControlCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="LightBlue" Offset="0"/>
+            <GradientStop Color="#FF373737" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <ListBox DataContext="{StaticResource ViewModel_MainWindowModel}" ItemsSource="{Binding _vedioListModel.VedioCtrArray}"
+                 Background="Transparent" Visibility="Visible" Style="{StaticResource ListBoxWrapTemplate}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListBox.ItemTemplateSelector>
+                <viewModel:VedioListItemTemplateSelector DeviceTemplate="{StaticResource ListBoxItemDeviceTemplate}" AddTemplate="{StaticResource ListBoxItemAddTemplate}"></viewModel:VedioListItemTemplateSelector>
+            </ListBox.ItemTemplateSelector>
+        </ListBox>
+    </Grid>
+</Window>

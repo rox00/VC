@@ -1,0 +1,315 @@
+﻿<ResourceDictionary xmlns:UGameMain="clr-namespace:UYouMain"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+                    xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:viewModel="clr-namespace:UYouMain.ViewModel"
+                    >
+    <DataTemplate  DataType="{x:Type viewModel:MainWindowModel}">
+        <Grid x:Name="rootPanel" Visibility="Visible" SnapsToDevicePixels="True" AllowDrop="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding Path=_TitleHeight, Mode=OneWay}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" x:Name="TitlePane">
+                <Grid  DockPanel.Dock="Top" x:Name="gridTitle" Margin="0,0,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" MinWidth="10" ></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="18"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="imgLogo" Source="/UYouMain;component/Resources/imgs/black/logo.png" Margin="5,5,0,0" Focusable="False"/>
+                            <TextBlock x:Name="title" Foreground="#FFCB2424" VerticalAlignment="Bottom" Focusable="False" Text="{Binding Title}"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="gridTitleCtrl" Grid.Column="1" Grid.Row="0">         
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock x:Name="txtDiskSpace" Text="{Binding Path=ConStatuText}" Foreground="#FFFFFFFF"  Margin="-15,0,5,0" Focusable="False" FontSize="10" VerticalAlignment="Center"/>
+                        <Image Source="/UYouMain;component/Resources/imgs/black/顶隔线.png" Focusable="False"></Image>
+                        <Image Source="/UYouMain;component/Resources/imgs/black/声音.png" Width="0" x:Name="imgVoice" Focusable="False"></Image>
+                        <Slider x:Name="sliderVolume" Height="8" Width="0" Minimum="0" Maximum="16" 
+                                SmallChange="1" Value="5" LargeChange="2" Focusable="False"
+                                Style="{StaticResource Style_SliderCustom}"></Slider>
+                        <Image Source="/UYouMain;component/Resources/imgs/black/顶隔线.png" Focusable="False"></Image>
+                        <Menu VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="menuMoreSetting" Foreground="White" Background="Black">
+                            <MenuItem x:Name="menuMore" Header="更多设置"  Foreground="White" Background="Black" Style="{StaticResource MenuItemStyle1}">
+                                <MenuItem Header="设备信息"   Foreground="White" Background="Black" Style="{StaticResource MenuItemStyle1}">
+                                    <MenuItem x:Name="menuDeviceInfoToLocal" Command="{Binding Path=_vedioListModel.DeviceInfo2LocalCommand}" Header="同步至本地"  Foreground="White" Background="Black" Style="{StaticResource MenuItemStyle1}"/>
+                                    <MenuItem x:Name="menuDeviceInfoToSrv" Command="{Binding Path=_vedioListModel.DeviceInfo2ServerCommand}" Header="上传到服务器" Foreground="White" Background="Black" Style="{StaticResource MenuItemStyle1}"/>
+                                </MenuItem>
+                            </MenuItem>
+                        </Menu>
+                        <Button x:Name="btnMin" Focusable="False" Width="18" Height="18" BorderThickness="0" Style="{StaticResource Style_BackGroundBtn}"
+                                Command="{Binding MinCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="{StaticResource minbrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btnMax" Focusable="False" Width="18" Height="16" BorderThickness="0" Style="{StaticResource Style_BackGroundBtn}"
+                                Command="{Binding MaxCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="{StaticResource maxbrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btnExit" Focusable="False" Width="18" Height="18" BorderThickness="0" Style="{StaticResource Style_BackGroundBtn}"
+                                Command="{Binding ExitCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="{StaticResource exitbrush}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </DockPanel>
+        <Grid Grid.Row="1" x:Name="CtrlGrid">
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding Path=_LEFTMENUWIDTH, Mode=OneWay}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="leftMenu" SnapsToDevicePixels="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                    <Button Grid.Row="0" x:Name="btnDevicelist" Command="{Binding Path=ActiviListWndCommand}"  Background="Red" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" x:Name="textBg" Text="设备" Foreground="LightGray" HorizontalAlignment ="Center" VerticalAlignment="Bottom"></TextBlock>
+                                            <TextBlock Grid.Row="1" x:Name="textBg1" Text="列表" Foreground="LightGray" HorizontalAlignment ="Center" VerticalAlignment="Top"></TextBlock>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground"  Value="LightGray" TargetName="textBg" />
+                                                <Setter Property="Foreground"  Value="LightGray" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Foreground" Value="LightGray" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="LightGray" TargetName="textBg1" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                    <CheckBox  Grid.Row="1" x:Name="btnRotate" Visibility="Visible" IsChecked="{Binding Path=IsHorizontalMode, Mode=TwoWay}" Command="{Binding Path=rotateCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                        <CheckBox.Style>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                                            <Image Name="btnbg" Source="/UYouMain;component/Resources/imgs/black/横屏.png" />
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter Property="Source"  Value="/UYouMain;component/Resources/imgs/black/横屏.png" TargetName="btnbg" />
+                                                </Trigger>
+                                                <Trigger Property="IsChecked" Value="false">
+                                                    <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/竖屏.png" TargetName="btnbg" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </CheckBox.Style>
+                    </CheckBox>
+                    <Button Grid.Row="2" x:Name="btnTask" Command="{Binding Path=TaskCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Image Name="btnbg" Source="/UYouMain;component/Resources/imgs/black/任务管理1.png" />
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source"  Value="/UYouMain;component/Resources/imgs/black/任务管理1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/任务管理2.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/任务管理1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                    <Button Grid.Row="3" x:Name="btnHome" Command="{Binding Path=HomeCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Image Name="btnbg" Source="/UYouMain;component/Resources/imgs/black/主页1.png" />
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source"  Value="/UYouMain;component/Resources/imgs/black/主页1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/主页2.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/任务管理1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                    <Button Grid.Row="4" x:Name="btnBack" Command="{Binding Path=BackCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Image Name="btnbg" Source="/UYouMain;component/Resources/imgs/black/返回1.png" />
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source"  Value="/UYouMain;component/Resources/imgs/black/返回1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/返回2.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/返回1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                    <Button Grid.Row="5" x:Name="btnInstallFile" Command="{Binding Path=_vedioListModel.InstallFileCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="Red" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" x:Name="textBg" Text="安装" Foreground="Gray" HorizontalAlignment ="Center" VerticalAlignment="Bottom"></TextBlock>
+                                            <TextBlock Grid.Row="1" x:Name="textBg1" Text="APP" Foreground="Gray" HorizontalAlignment ="Center" VerticalAlignment="Top"></TextBlock>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground"  Value="Gray" TargetName="textBg" />
+                                                <Setter Property="Foreground"  Value="Gray" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Foreground" Value="Gray" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="Gray" TargetName="textBg1" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                    <Button Grid.Row="6" x:Name="btnReboot" Command="{Binding Path=_vedioListModel.RebootCommand}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="Red" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Focusable="False">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" x:Name="textBg" Text="设备" Foreground="Gray" HorizontalAlignment ="Center" VerticalAlignment="Bottom"></TextBlock>
+                                            <TextBlock Grid.Row="1" x:Name="textBg1" Text="重启" Foreground="Gray" HorizontalAlignment ="Center" VerticalAlignment="Top"></TextBlock>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground"  Value="Gray" TargetName="textBg" />
+                                                <Setter Property="Foreground"  Value="Gray" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="Red" TargetName="textBg1" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Foreground" Value="Gray" TargetName="textBg" />
+                                                <Setter Property="Foreground" Value="Gray" TargetName="textBg1" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+
+                    <Button Grid.Row="7" x:Name="btnKeyMapping" Command="{Binding ActiviKeyMapWndCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False" >
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Image Name="btnbg" Source="/UYouMain;component/Resources/imgs/black/键盘1.png" />
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source"  Value="/UYouMain;component/Resources/imgs/black/键盘1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/键盘2.png" TargetName="btnbg" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Source" Value="/UYouMain;component/Resources/imgs/black/键盘1.png" TargetName="btnbg" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                    <CheckBox Grid.Row="8" x:Name="chkKeyBoard" IsChecked="{Binding Path=IsKeyMappingOpen}" Focusable="False" Style="{StaticResource Style_IOSCheck}"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+           
+            <Grid Grid.Column="1" SnapsToDevicePixels="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0, 0, 0, 0"
+                    x:Name="svcBoxGrid" AllowDrop="True">
+                    <ToggleButton IsChecked="{Binding Path=_IsCollapsed}"  Focusable="False" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="CollapseButton"  Height="{Binding Path=CollapseHeight}" Width="{Binding Path=CollapseWidth}" Template="{StaticResource Template_CollapseButton}"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SizeChanged">
+                            <i:InvokeCommandAction Command="{Binding UpdateWndPosCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Grid>
+        </Grid>
+    </Grid>
+        <DataTemplate.Triggers>
+
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+</ResourceDictionary>

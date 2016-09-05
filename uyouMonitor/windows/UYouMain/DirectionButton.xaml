@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="UYouMain.DirectionButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UYouMain"
+             xmlns:s="clr-namespace:UYouMain.Adorners"
+             mc:Ignorable="d" 
+             Width="117" Height="123" KeyDown="UserControl_KeyDown" Loaded="UserControl_Loaded" Style="{StaticResource ControlResizeStyle}" ><!--Style="{StaticResource ControlResizeStyle}"-->
+    <UserControl.Resources>
+        <local:IntToStringConverter x:Key="its"></local:IntToStringConverter>
+    </UserControl.Resources>
+    <Grid x:Name="grid1">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="删除" x:Name="menuDel_direction"  >
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/imgs/black/四向2.png"></ImageBrush>
+        </Grid.Background>   
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="0" >
+            <Label x:Name="lblUp" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                <TextBlock Text="{Binding Path=Up,Converter={StaticResource its}}"></TextBlock>
+            </Label>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Label Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBlock Text="{Binding Path=Left, Converter={StaticResource its}}"></TextBlock>
+            </Label>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Label Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBlock Text="{Binding Path=Right, Converter={StaticResource its}}"></TextBlock>
+            </Label>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Label Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBlock Text="{Binding Path=Down, Converter={StaticResource its}}"></TextBlock>
+            </Label>
+        </Grid>
+    </Grid>
+</UserControl>
