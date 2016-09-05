@@ -1,0 +1,36 @@
+// BoxManager.idl : BoxManager 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(BoxManager.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(47A5E8DE-DCC0-4E41-9F1D-331FCE5802AB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IBoxFinder : IDispatch{
+	[id(1)] HRESULT GetCable([out] DWORD* nCableId, [out, retval] BSTR* bstrCableName);
+	[id(2)] HRESULT AttachDevice([in] BSTR lpszCableName, [in] LONG hWnd);
+	[id(3)] HRESULT DetachDevice([in] BSTR lpszCableName, [in] LONG hWnd);
+};
+[
+	uuid(0796B356-EE43-4FBB-8746-AED444BE87B3),
+	version(1.0),
+]
+library BoxManagerLib
+{
+	[
+		uuid(448D27BC-A872-4ED2-8A0C-9DDC1F204F05)		
+	]
+	coclass BoxFinder
+	{
+		[default] interface IBoxFinder;
+	};
+};
+

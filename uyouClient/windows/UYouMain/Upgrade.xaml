@@ -1,0 +1,30 @@
+﻿<Window x:Class="UYouMain.Upgrade"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="系统升级" Height="300" Width="300" Closing="Window_Closing" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Topmost="True">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="title" Text="123" TextWrapping="Wrap"></TextBlock>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnOK"          Margin="10,0,0,0" >确定</Button>
+                <Button x:Name="btnReStart"     Margin="10,0,0,0" >重试</Button>
+                <Button x:Name="btnCancel"      Margin="10,0,0,0" >取消</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <ProgressBar Height="20" Width="200" x:Name="progressBar"></ProgressBar>
+        </Grid>
+    </Grid>
+</Window>

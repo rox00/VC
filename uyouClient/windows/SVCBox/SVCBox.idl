@@ -1,0 +1,93 @@
+// SVCBox.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (SVCBox.tlb) that will become a resource in
+// SVCBox.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(BF7F61E6-2A82-4AEE-BC25-4BF55D92C419), version(1.0),
+  control ]
+library SVCBoxLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CSVCBoxCtrl
+	[ 
+		uuid(2273438B-C05A-432D-943E-14C205915C12)	
+	]
+	dispinterface _DSVCBox
+	{
+		properties:
+		methods:
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] ULONG Start(ULONG bAutoReconnect, ULONG hwndVedio);
+			[id(2)] ULONG SendOperateCmd(ULONG ulCmdType, ULONG ulPara1, ULONG ulPara2, ULONG ulPara3, BSTR data);
+			[id(3)] ULONG SVCDowndloadApp(BSTR strUrl, BSTR strExtend, ULONG ulExtent);
+			[id(4)] ULONG SetIMEStatus(ULONG ulIMEOpen);
+			[id(5)] ULONG GetIMEStatus(void);			
+			[id(6), helpstring("设置屏幕分辨率")] void SetScreenResolution(BSTR resolution);
+			[id(7), helpstring("重置显示模式")] void ResetDisplayMode();						
+			[id(8)] ULONG GetUpgradeInfo(BSTR version);
+			[id(9), helpstring("获取设备屏幕尺寸")] void GetDeviceScreenSize();
+			[id(10), helpstring("获取SD卡剩余空间")] void GetSDCardSpace();
+			[id(11), helpstring("打开APK")] void openApk(BSTR packageName, BSTR activityName);	
+			[id(12)] ULONG UpdatePCVersion(BSTR filePath);
+			[id(13)] HRESULT LoadKeyMapping(BSTR packageName);
+			[id(14)] ULONG SetKeyMappingOpen(SHORT open);
+			[id(15)] ULONG SaveKeyMappingConfig(BSTR configFile, BSTR content);
+			[id(16)] ULONG SetRunningApp(BSTR packageName);
+			[id(17)] ULONG PushUpgradeFileToBox(BSTR boxFile);
+			[id(18)] ULONG InputChar(LONG value);
+			[id(19)] ULONG GetSystemDPI(LONG* dpiValue);
+			[id(20)] ULONG GetWorkAreaRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(21)] ULONG GetAndroidVolume(LONG* volume);
+			[id(22)] ULONG RebootBox();
+			[id(23)] ULONG OpenTaskManager();
+			[id(24)] ULONG CallAndroidBack();
+			[id(25)] ULONG CallAndroidHomeKey();
+			[id(26)] ULONG SetVolume(LONG value);
+			[id(27)] ULONG Exit();
+			[id(28)] void ClearTouchedKey();
+			[id(29)] ULONG InstallAPP(BSTR fileName);
+			[id(30)] void UpdateVedioRect(LONG l, LONG t, LONG r, LONG b);
+			[id(31)] void SetFlag(LONG nFlag, LONG value);
+			[id(32)] void UpdateDeviceSize(LONG deviceWidth, LONG deviceHeight);
+			[id(33)] void UpdateCollsepRc(LONG screenLeft, LONG screenTop, LONG screenRight, LONG screenBottom);
+	};
+
+	//  Event dispatch interface for CSVCBoxCtrl
+
+	[ 
+		uuid(BA088AF6-F635-447C-99E7-8372F67B1E99)	
+	]
+	dispinterface _DSVCBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(1)] void ConnectStateChanged(ULONG ulCurrentState);
+			[id(2)] void NotifyRunningApp(BSTR bstrPackageName, BSTR bstrAppName);
+			[id(3)] void NotifyDeviceScreenSize(ULONG ulWidth, ULONG ulHeight);
+			[id(4)] void HintInputMethodStatus(USHORT bInputMethodShouldOpen);
+			[id(5)] void NotifySdCardSpace(ULONG ulUsed, ULONG ulTotal);			
+			[id(6)] void NotifySystemVolume(LONG volume);			
+			[id(7)] void NotifyUpgrade(BSTR upgradeInfo);											
+			[id(8)] void NotifyVideoReady();
+			[id(9)] void NotifyUpdateException();
+			[id(10)] void NotifyUpgrageFinish();
+	};
+
+	//  Class information for CSVCBoxCtrl
+	[
+		uuid(9175A113-DD75-4E95-8A27-D0917AC9DE10)
+	]
+	coclass SVCBox
+	{
+		[default] dispinterface _DSVCBox;
+		[default, source] dispinterface _DSVCBoxEvents;
+	};
+
+};

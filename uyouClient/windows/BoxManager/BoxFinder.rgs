@@ -1,0 +1,26 @@
+HKCR
+{
+	SVC.BoxFinder.1 = s 'BoxFinder Class'
+	{
+		CLSID = s '{448D27BC-A872-4ED2-8A0C-9DDC1F204F05}'
+	}
+	SVC.BoxFinder = s 'BoxFinder Class'
+	{		
+		CurVer = s 'SVC.BoxFinder.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {448D27BC-A872-4ED2-8A0C-9DDC1F204F05} = s 'BoxFinder Class'
+		{
+			ProgID = s 'SVC.BoxFinder.1'
+			VersionIndependentProgID = s 'SVC.BoxFinder'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{0796B356-EE43-4FBB-8746-AED444BE87B3}'
+			Version = s '1.0'
+		}
+	}
+}

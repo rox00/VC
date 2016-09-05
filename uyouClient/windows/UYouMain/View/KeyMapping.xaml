@@ -1,0 +1,66 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UYouMain" x:Class="UYouMain.KeyMapping" 
+         SizeChanged="KeyMapping_SizeChanged" 
+         SnapsToDevicePixels="True" Focusable="True" Visibility ="Visible" Width="0" Height="0"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent" ShowInTaskbar="False"
+    >
+    <!--Width="1280" Height="720"  #FF060606  Width="0" Height="0"  用来测试-->
+
+    <Canvas x:Name="canvasMain" ClipToBounds="True" Background="#FF060606" Opacity="0.8" Margin="0,-1,0,1" AllowDrop="True">
+        <Canvas x:Name="canvasOper" Focusable="True">
+            <Image x:Name="DirectionImg" Source="/UYouMain;component/Resources/imgs/black/四向2.png" Visibility="Collapsed"/>
+            <Image x:Name="DirectionImgTop" Source="/UYouMain;component/Resources/imgs/black/四向2-选择-上.png" Visibility="Collapsed"/>
+            <Image x:Name="DirectionImgLeft" Source="/UYouMain;component/Resources/imgs/black/四向2-选择-左.png" Visibility="Collapsed"/>
+            <Image x:Name="DirectionImgRight" Source="/UYouMain;component/Resources/imgs/black/四向2-选择-右.png" Visibility="Collapsed"/>
+            <Image x:Name="DirectionImgBottom" Source="/UYouMain;component/Resources/imgs/black/四向2-选择-下.png" Visibility="Collapsed"/>
+            <Image x:Name="imgAim" Source="/UYouMain;component/Resources/imgs/black/准星.png" Canvas.Left="850" Canvas.Top="10" Width="39" Height="38" 
+                   ToolTip="拖到射击游戏准星处，保存后点右键打开和关闭瞄准" />
+            <Image x:Name="imgFire" Source="/UYouMain;component/Resources/imgs/black/瞄准.png" Canvas.Left="900" Canvas.Top="10" Width="39" Height="38" 
+                   ToolTip="拖到射击游戏开枪按钮处，保存后，打开瞄准后左键开枪"></Image>
+            <Image x:Name="imgDirection" Source="/UYouMain;component/Resources/imgs/black/四向.png" Canvas.Left="950" Canvas.Top="10" Width="39" Height="38" 
+                   ToolTip="拖动到游戏方向控制柄处"/>
+            <Button Content="Button" Canvas.Left="1000" Focusable="False" Canvas.Top="10" Width="72" x:Name="btnClear" Height="34">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image Source="/UYouMain;component/Resources/imgs/black/清除.png" Width="72" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Button" Canvas.Left="1100" Focusable="False" Canvas.Top="10" Width="72" x:Name="btnSave" Opacity="1" Height="34">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image Source="/UYouMain;component/Resources/imgs/black/保存.png" Width="72" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="Button" Canvas.Left="1200" Focusable="False" Canvas.Top="10" Width="34" x:Name="btnClose" Height="34">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image Source="/UYouMain;component/Resources/imgs/black/X.png" Width="34" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Canvas>        
+    </Canvas>
+</Window>
