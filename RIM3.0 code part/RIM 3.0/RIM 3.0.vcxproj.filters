@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{6002502c-4407-4d29-b7c0-371a2adf6390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Controls">
+      <UniqueIdentifier>{871d687d-d48d-4516-8e9e-022561e42eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Controls\Common">
+      <UniqueIdentifier>{05e49405-1eeb-42e4-a1b8-07da7b32c462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\tinyxml">
+      <UniqueIdentifier>{24187532-2403-4058-869b-a02909eaa612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="系统设置">
+      <UniqueIdentifier>{14e88989-1077-465e-8d40-b8460e1a22ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="聊天">
+      <UniqueIdentifier>{fb107319-3bec-462e-92bc-f49fb63ac190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="子系统通信">
+      <UniqueIdentifier>{af50b861-a31e-4796-8d72-f56cb7bfb4f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap">
+      <UniqueIdentifier>{bf27ab57-2d53-44c8-aced-69812e3bd331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap\Bsdrtmservice">
+      <UniqueIdentifier>{48ed9885-6056-4876-833f-24ce67ef97d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap\Xdmrtm">
+      <UniqueIdentifier>{ae787036-635a-4b3c-a4db-326bd667357c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap\Bsdsysservice">
+      <UniqueIdentifier>{b90f2a3c-b276-4660-89e4-9fc098bb7769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap\Xdmsdm">
+      <UniqueIdentifier>{fbcf1bf0-dbee-44a7-a21c-6c95ff858300}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CircleDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DockDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoTipDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogonWndDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainListDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RIM 3.0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RIM 3.0Dlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RIMConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RIMTreeCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\CommonFunction.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Register.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\UserDataQueue.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\UserThread.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngButton.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngCheckBox.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngCheckButton.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PNGGrayTipEdit.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngHeaderCtrl.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngListBox.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngListCtrl.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngRadioButton.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngStatic.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\PngTreeCtrl.cpp">
+      <Filter>Include\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\Common\PngBase.cpp">
+      <Filter>Include\Controls\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\Common\PngControlScroll.cpp">
+      <Filter>Include\Controls\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\Controls\Common\PngToolTipCtrl.cpp">
+      <Filter>Include\Controls\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\tinyxml\tinystr.cpp">
+      <Filter>Include\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\tinyxml\tinyxml.cpp">
+      <Filter>Include\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\tinyxml\tinyxmlerror.cpp">
+      <Filter>Include\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\tinyxml\tinyxmlparser.cpp">
+      <Filter>Include\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="系统设置\CustomSetDlg.cpp">
+      <Filter>系统设置</Filter>
+    </ClCompile>
+    <ClCompile Include="系统设置\DialogSet.cpp">
+      <Filter>系统设置</Filter>
+    </ClCompile>
+    <ClCompile Include="系统设置\SystemSetDlg.cpp">
+      <Filter>系统设置</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ChatBkDlg.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ChatDoc.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ChatRichView.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\CntrItem.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\EnBitmap.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ImageDataObject.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\NetData.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\SendFileListTree.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\TapBitmap.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ThreadChatDlg.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ThreadDataProcess.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ThreadTCPMonitor.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="聊天\ThreadUDPMonitor.cpp">
+      <Filter>聊天</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransClient.cpp">
+      <Filter>子系统通信</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransServer.cpp">
+      <Filter>子系统通信</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\GsoapServer.cpp">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdrtmservice\BsdrtmserviceBSDRTMSoap12Proxy.cpp">
+      <Filter>gsoap\Bsdrtmservice</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdrtmservice\BsdrtmserviceC.cpp">
+      <Filter>gsoap\Bsdrtmservice</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmrtm\XdmrtmC.cpp">
+      <Filter>gsoap\Xdmrtm</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmrtm\XdmrtmXdmrtmProxy.cpp">
+      <Filter>gsoap\Xdmrtm</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdsysservice\BsdsysserviceBSDSYSSoap12Proxy.cpp">
+      <Filter>gsoap\Bsdsysservice</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdsysservice\BsdsysserviceC.cpp">
+      <Filter>gsoap\Bsdsysservice</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmsdm\XdmsdmC.cpp">
+      <Filter>gsoap\Xdmsdm</Filter>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmsdm\XdmsdmXdmsdmProxy.cpp">
+      <Filter>gsoap\Xdmsdm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CircleDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DockDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoTipDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogonWndDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainListDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PngPath_Define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RIM 3.0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RIM 3.0Dlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RIMConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RIMTreeCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\CommonFunction.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Register.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UserDataQueue.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UserThread.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngButton.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngCheckBox.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngCheckButton.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PNGGrayTipEdit.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngHeaderCtrl.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngListBox.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngListCtrl.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngRadioButton.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngStatic.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\PngTreeCtrl.h">
+      <Filter>Include\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\Common\PngBase.h">
+      <Filter>Include\Controls\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\Common\PngControlScroll.h">
+      <Filter>Include\Controls\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Controls\Common\PngToolTipCtrl.h">
+      <Filter>Include\Controls\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\tinyxml\tinystr.h">
+      <Filter>Include\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\tinyxml\tinyxml.h">
+      <Filter>Include\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="系统设置\CustomSetDlg.h">
+      <Filter>系统设置</Filter>
+    </ClInclude>
+    <ClInclude Include="系统设置\DialogSet.h">
+      <Filter>系统设置</Filter>
+    </ClInclude>
+    <ClInclude Include="系统设置\SystemSetDlg.h">
+      <Filter>系统设置</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ChatBkDlg.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ChatDoc.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ChatRichView.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\CntrItem.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\EnBitmap.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ImageDataObject.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\NetData.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\SendFileListTree.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\TapBitmap.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ThreadChatDlg.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ThreadDataProcess.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ThreadTCPMonitor.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="聊天\ThreadUDPMonitor.h">
+      <Filter>聊天</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\IRIM30MsgClient.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\IRIM30MsgServer.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\Job.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\Ping.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\ReadWriteLock.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\RIM30MsgDefine.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransClient.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransServer.h">
+      <Filter>子系统通信</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\GsoapServer.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceBSDRTMSoap12Proxy.h">
+      <Filter>gsoap\Bsdrtmservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceH.h">
+      <Filter>gsoap\Bsdrtmservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceStub.h">
+      <Filter>gsoap\Bsdrtmservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmH.h">
+      <Filter>gsoap\Xdmrtm</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmStub.h">
+      <Filter>gsoap\Xdmrtm</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmXdmrtmProxy.h">
+      <Filter>gsoap\Xdmrtm</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceBSDSYSSoap12Proxy.h">
+      <Filter>gsoap\Bsdsysservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceH.h">
+      <Filter>gsoap\Bsdsysservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceStub.h">
+      <Filter>gsoap\Bsdsysservice</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmH.h">
+      <Filter>gsoap\Xdmsdm</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmStub.h">
+      <Filter>gsoap\Xdmsdm</Filter>
+    </ClInclude>
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmXdmsdmProxy.h">
+      <Filter>gsoap\Xdmsdm</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\idr_main.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\RIM 3.0.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RIM 3.0.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RIM30.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

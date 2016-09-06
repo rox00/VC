@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3520DCA1-495C-453C-8303-7BCFC6A5F33E}</ProjectGuid>
+    <RootNamespace>RIM30</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\$(Configuration)\</OutDir>
+    <IntDir>..\..\..\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\$(Configuration)\</OutDir>
+    <IntDir>..\..\..\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\sdk\stdsoap2;..\..\sdk\SQlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>stdsoap2D.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>Xcopy "$(ProjectDir)ConfigTemp\DebugOrRelease\*.*" "$(TargetDir)"  /s /e /y /d</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\sdk\stdsoap2;..\..\sdk\SQlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <Link>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>stdsoap2.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>Xcopy "$(ProjectDir)ConfigTemp\DebugOrRelease\*.*" "$(TargetDir)"  /s /e /y /d</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransClient.cpp" />
+    <ClCompile Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransServer.cpp" />
+    <ClCompile Include="..\Include\CommonFunction.cpp" />
+    <ClCompile Include="..\Include\Controls\Common\PngBase.cpp" />
+    <ClCompile Include="..\Include\Controls\Common\PngControlScroll.cpp" />
+    <ClCompile Include="..\Include\Controls\Common\PngToolTipCtrl.cpp" />
+    <ClCompile Include="..\Include\Controls\PngButton.cpp" />
+    <ClCompile Include="..\Include\Controls\PngCheckBox.cpp" />
+    <ClCompile Include="..\Include\Controls\PngCheckButton.cpp" />
+    <ClCompile Include="..\Include\Controls\PNGGrayTipEdit.cpp" />
+    <ClCompile Include="..\Include\Controls\PngHeaderCtrl.cpp" />
+    <ClCompile Include="..\Include\Controls\PngListBox.cpp" />
+    <ClCompile Include="..\Include\Controls\PngListCtrl.cpp" />
+    <ClCompile Include="..\Include\Controls\PngRadioButton.cpp" />
+    <ClCompile Include="..\Include\Controls\PngStatic.cpp" />
+    <ClCompile Include="..\Include\Controls\PngTreeCtrl.cpp" />
+    <ClCompile Include="..\Include\Register.cpp" />
+    <ClCompile Include="..\Include\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\Include\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\Include\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\Include\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\Include\UserDataQueue.cpp" />
+    <ClCompile Include="..\Include\UserThread.cpp" />
+    <ClCompile Include="CircleDlg.cpp" />
+    <ClCompile Include="DockDlg.cpp" />
+    <ClCompile Include="gsoap\Bsdrtmservice\BsdrtmserviceBSDRTMSoap12Proxy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdrtmservice\BsdrtmserviceC.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdsysservice\BsdsysserviceBSDSYSSoap12Proxy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Bsdsysservice\BsdsysserviceC.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\GsoapServer.cpp" />
+    <ClCompile Include="gsoap\Xdmrtm\XdmrtmC.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmrtm\XdmrtmXdmrtmProxy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmsdm\XdmsdmC.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gsoap\Xdmsdm\XdmsdmXdmsdmProxy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ImageConfig.cpp" />
+    <ClCompile Include="InfoTipDlg.cpp" />
+    <ClCompile Include="LogonWndDlg.cpp" />
+    <ClCompile Include="MainListDlg.cpp" />
+    <ClCompile Include="RIM 3.0.cpp" />
+    <ClCompile Include="RIM 3.0Dlg.cpp" />
+    <ClCompile Include="RIMConfig.cpp" />
+    <ClCompile Include="RIMTreeCtrl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="系统设置\CustomSetDlg.cpp" />
+    <ClCompile Include="系统设置\DialogSet.cpp" />
+    <ClCompile Include="系统设置\SystemSetDlg.cpp" />
+    <ClCompile Include="聊天\ChatBkDlg.cpp" />
+    <ClCompile Include="聊天\ChatDoc.cpp" />
+    <ClCompile Include="聊天\ChatRichView.cpp" />
+    <ClCompile Include="聊天\CntrItem.cpp" />
+    <ClCompile Include="聊天\EnBitmap.cpp" />
+    <ClCompile Include="聊天\ImageDataObject.cpp" />
+    <ClCompile Include="聊天\NetData.cpp" />
+    <ClCompile Include="聊天\SendFileListTree.cpp" />
+    <ClCompile Include="聊天\TapBitmap.cpp" />
+    <ClCompile Include="聊天\ThreadChatDlg.cpp" />
+    <ClCompile Include="聊天\ThreadDataProcess.cpp" />
+    <ClCompile Include="聊天\ThreadTCPMonitor.cpp" />
+    <ClCompile Include="聊天\ThreadUDPMonitor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\Job.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\Ping.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\ReadWriteLock.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\Common\RIM30MsgDefine.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\IRIM30MsgClient.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\IRIM30MsgServer.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransClient.h" />
+    <ClInclude Include="..\..\sdk\RIM30MSG\ThreadRIMMsgTransServer.h" />
+    <ClInclude Include="..\Include\CommonFunction.h" />
+    <ClInclude Include="..\Include\Controls\Common\PngBase.h" />
+    <ClInclude Include="..\Include\Controls\Common\PngControlScroll.h" />
+    <ClInclude Include="..\Include\Controls\Common\PngToolTipCtrl.h" />
+    <ClInclude Include="..\Include\Controls\PngButton.h" />
+    <ClInclude Include="..\Include\Controls\PngCheckBox.h" />
+    <ClInclude Include="..\Include\Controls\PngCheckButton.h" />
+    <ClInclude Include="..\Include\Controls\PNGGrayTipEdit.h" />
+    <ClInclude Include="..\Include\Controls\PngHeaderCtrl.h" />
+    <ClInclude Include="..\Include\Controls\PngListBox.h" />
+    <ClInclude Include="..\Include\Controls\PngListCtrl.h" />
+    <ClInclude Include="..\Include\Controls\PngRadioButton.h" />
+    <ClInclude Include="..\Include\Controls\PngStatic.h" />
+    <ClInclude Include="..\Include\Controls\PngTreeCtrl.h" />
+    <ClInclude Include="..\Include\Register.h" />
+    <ClInclude Include="..\Include\tinyxml\tinystr.h" />
+    <ClInclude Include="..\Include\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\Include\UserDataQueue.h" />
+    <ClInclude Include="..\Include\UserThread.h" />
+    <ClInclude Include="CircleDlg.h" />
+    <ClInclude Include="DockDlg.h" />
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceBSDRTMSoap12Proxy.h" />
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceH.h" />
+    <ClInclude Include="gsoap\Bsdrtmservice\BsdrtmserviceStub.h" />
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceBSDSYSSoap12Proxy.h" />
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceH.h" />
+    <ClInclude Include="gsoap\Bsdsysservice\BsdsysserviceStub.h" />
+    <ClInclude Include="gsoap\GsoapServer.h" />
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmH.h" />
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmStub.h" />
+    <ClInclude Include="gsoap\Xdmrtm\XdmrtmXdmrtmProxy.h" />
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmH.h" />
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmStub.h" />
+    <ClInclude Include="gsoap\Xdmsdm\XdmsdmXdmsdmProxy.h" />
+    <ClInclude Include="ImageConfig.h" />
+    <ClInclude Include="InfoTipDlg.h" />
+    <ClInclude Include="LogonWndDlg.h" />
+    <ClInclude Include="MainListDlg.h" />
+    <ClInclude Include="PngPath_Define.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RIM 3.0.h" />
+    <ClInclude Include="RIM 3.0Dlg.h" />
+    <ClInclude Include="RIMConfig.h" />
+    <ClInclude Include="RIMTreeCtrl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="系统设置\CustomSetDlg.h" />
+    <ClInclude Include="系统设置\DialogSet.h" />
+    <ClInclude Include="系统设置\SystemSetDlg.h" />
+    <ClInclude Include="聊天\ChatBkDlg.h" />
+    <ClInclude Include="聊天\ChatDoc.h" />
+    <ClInclude Include="聊天\ChatRichView.h" />
+    <ClInclude Include="聊天\CntrItem.h" />
+    <ClInclude Include="聊天\EnBitmap.h" />
+    <ClInclude Include="聊天\ImageDataObject.h" />
+    <ClInclude Include="聊天\NetData.h" />
+    <ClInclude Include="聊天\SendFileListTree.h" />
+    <ClInclude Include="聊天\TapBitmap.h" />
+    <ClInclude Include="聊天\ThreadChatDlg.h" />
+    <ClInclude Include="聊天\ThreadDataProcess.h" />
+    <ClInclude Include="聊天\ThreadTCPMonitor.h" />
+    <ClInclude Include="聊天\ThreadUDPMonitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\idr_main.ico" />
+    <Image Include="res\RIM 3.0.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RIM 3.0.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RIM30.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="RIM 3.0.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--
+	moudel                子系统模块信息
+	station						    站点信息
+	device								设备信息
+	measure								测量功能
+	state									-1为不可用， 0 为不在线， 1为在线， 
+  
+  user                  用户信息
+  branch                用户所属部门
+  
+-->
+<root>
+  <welcomtext text="欢迎使用RIM3.0" fontsize="10" />
+  <modifypass theme="Blue"/> 
+    <moudles>
+        <moudle name="监测测向" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="RTM\MeasureFrameEx.exe" selpngpath="res\\PNG\\dfsel.png" unselpngpath="res\\PNG\\dfunsel.png" />
+        <moudle name="统计分析" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="msa/msa.exe" selpngpath="res\\PNG\\calsel.png" unselpngpath="res\\PNG\\calunsel.png" />
+        <moudle name="环境监控" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="ems/ems.exe" selpngpath="res\\PNG\\dfsel.png" unselpngpath="res\\PNG\\dfunsel.png" />
+        <moudle name="门户网站" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="http://192.168.101.234/rim3/rps/index/index.aspx" selpngpath="res\\PNG\\globalsel.png" unselpngpath="res\\PNG\\globalunsel.png" />
+        <moudle name="门户后台" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="rps/rps.exe" selpngpath="res\\PNG\\monitosel.png" unselpngpath="res\\PNG\\monitorunsel.png" />
+        <moudle name="系统管理" sysFuncNo="069997" bShowInList="1" bDefaultOpen="0" bSupportOutLine="0" exePath="dbs/DBS.exe" selpngpath="res\\PNG\\syssel.png" unselpngpath="res\\PNG\\sysunsel.png" />
+    </moudles>
+    <sqltables>
+        <table name="T_RIM_RTM_STATION" updatetime="1" />
+        <table name="T_RIM_RTM_RNC" updatetime="1" />
+        <table name="T_RIM_RTM_REF_STATION_TYPE" updatetime="1" />
+        <table name="T_RIM_RTM_REF_DEVICE_TYPE" updatetime="1" />
+        <table name="T_RIM_RTM_REF_DEVICE_PROTOCOL" updatetime="1" />
+        <table name="T_RIM_RTM_REF_DEVICE_MODEL_FUNC_PARAM" updatetime="1" />
+        <table name="T_RIM_RTM_REF_DEVICE_MODEL" updatetime="1" />
+        <table name="T_RIM_RTM_REF_DEVICE_FUNC" updatetime="1" />
+        <table name="T_RIM_RTM_MON_ORG" updatetime="1" />
+        <table name="T_RIM_RTM_MON_CONTRL_CENTER" updatetime="1" />
+        <table name="T_RIM_RTM_DEVICE_FUNC_ANTENNA" updatetime="1" />
+        <table name="T_RIM_RTM_DEVICE_FUNC" updatetime="1" />
+        <table name="T_RIM_RTM_DEVICE" updatetime="1" />
+        <table name="T_RIM_RTM_ANTENNA" updatetime="1" />
+        <table name="T_RIM_COM_FREQ_LAYOUT" updatetime="1" />
+        <table name="T_RIM_COM_AUTH_SYS_FUNC" updatetime="1" />
+        <table name="T_RIM30_USERINFO" updatetime="1" />
+        <table name="T_RIM30_BRANCHINFO" updatetime="1" />
+
+    </sqltables>
+</root>

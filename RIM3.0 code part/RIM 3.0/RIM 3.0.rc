@@ -1,0 +1,404 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\RIM30.rc2""  // ?¤? Microsoft Visual C++ ?à¨¤?-|ì??á¨o???\r\n"
+    "#include ""l.CHS\\afxres.rc""      // ?à¨o?á??á¨|?t\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\RIM 3.0.ico"
+IDR_MAINFRAME1          ICON                    "res\\idr_main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 RIM 3.0"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "RIM 3.0，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2014",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_RIM30_DIALOG DIALOGEX 0, 0, 209, 345
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_NOINHERITLAYOUT
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_P_MAINWND,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,38,67,143,269
+    CONTROL         "",IDC_P_CIRCLE,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,88,11,109,109
+    CONTROL         "",IDC_P_LOGO,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,117,40,50,50
+END
+
+IDD_CIRCLEDLG DIALOGEX 0, 0, 109, 109
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_P_CIRCLE,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,80,79
+END
+
+IDD_DOCKDLG DIALOGEX 0, 0, 109, 109
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_MAINLISTDLG DIALOGEX 0, 0, 143, 269
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_E_SEARCH,34,43,98,16,ES_MULTILINE | ES_AUTOHSCROLL | NOT WS_BORDER
+    CONTROL         "",IDC_R_REGION,"Button",BS_AUTORADIOBUTTON | WS_GROUP,11,47,11,11
+    CONTROL         "",IDC_R_STATION,"Button",BS_AUTORADIOBUTTON,22,47,11,11
+    LTEXT           "",IDC_S_BRANCH,17,26,76,8
+    PUSHBUTTON      "",IDC_B_BRANCH,4,25,12,12
+    PUSHBUTTON      "",IDC_B_INFO,114,28,11,11
+    CONTROL         "",IDC_P_LIST,"Static",SS_BLACKFRAME | NOT WS_VISIBLE | WS_GROUP,1,65,140,183
+END
+
+IDD_SETDLG DIALOGEX 0, 0, 330, 222
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_P_DLG,"Static",SS_BLACKFRAME | NOT WS_VISIBLE | WS_GROUP,88,19,235,177
+    DEFPUSHBUTTON   "确定",IDOK,146,201,50,14
+    PUSHBUTTON      "取消",IDCANCEL,203,201,50,14
+    PUSHBUTTON      "应用",IDAPPLAY,262,201,50,14,WS_DISABLED
+    LISTBOX         IDC_LISTSELECTE,3,19,83,176,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_B_CLOSE,307,1,20,16
+END
+
+IDD_SETDLG_SYSTEMSET DIALOGEX 0, 0, 250, 165
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "开机自动启动",IDC_CHK_AUTOSTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,2,64,10
+END
+
+IDD_SETDLG_CUSTOMSET DIALOGEX 0, 0, 250, 165
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,8,12,185,141
+    GROUPBOX        "定制子系统",IDC_STATIC,1,1,244,157
+    PUSHBUTTON      "",IDC_B_UP,206,18,18,15
+    PUSHBUTTON      "",IDC_B_DOWN,206,35,18,15
+    CONTROL         "显示",IDC_CHK_SHOW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,205,78,32,10
+    CONTROL         "打开",IDC_CHK_OPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,205,94,32,10
+END
+
+IDD_TOOLVIEW DIALOGEX 0, 0, 208, 28
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "文件",IDC_B_FILE,4,4,24,22
+    PUSHBUTTON      "文件夹",IDC_B_DIRECTORY,33,4,24,22
+    PUSHBUTTON      "图片",IDC_B_PICTURE,63,4,24,22
+END
+
+IDD_CHATBKDLG DIALOGEX 0, 0, 535, 327
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PICTURE,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,15,19,490,295
+    CONTROL         "",IDC_SENDFILLTREE,"SysTreeView32",TVS_TRACKSELECT | WS_HSCROLL | WS_TABSTOP,341,30,150,271
+END
+
+IDD_INFOTIP DIALOGEX 0, 0, 144, 87
+STYLE DS_SETFONT | DS_NOIDLEMSG | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_NOACTIVATE
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_LOGONWNDDLG DIALOGEX 0, 0, 143, 269
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CLIPSIBLINGS
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_E_USER,24,74,95,18,ES_MULTILINE | ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_E_PASS,24,97,95,18,ES_MULTILINE | ES_AUTOHSCROLL | ES_OEMCONVERT | NOT WS_BORDER
+    EDITTEXT        IDC_E_SEVRIP,24,120,95,18,ES_MULTILINE | ES_AUTOHSCROLL | NOT WS_BORDER
+    DEFPUSHBUTTON   "登     录",IDC_BUTTON1,22,186,96,20
+    CONTROL         "记住密码",IDC_CHK_PASSWORD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,144,43,10
+    CONTROL         "自动登录",IDC_CHK_AUTOLOGON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,158,43,10
+    CTEXT           "版本: V2.00Build(20141112)",IDC_S_VERSION,13,237,113,9
+    CONTROL         "便携登录",IDC_CHK_OFFLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,172,43,10
+    EDITTEXT        IDC_E_RMSIP,8,6,95,18,ES_MULTILINE | ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_E_SASIP,8,31,95,18,ES_MULTILINE | ES_AUTOHSCROLL | NOT WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "Comments", "RIM 3.0.exe 应用程序"
+            VALUE "CompanyName", "<深圳市嵘兴实业发展有限公司>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "RIM 3.0.exe"
+            VALUE "LegalCopyright", "(C) <深圳市嵘兴实业发展有限公司>。保留所有权利。"
+            VALUE "OriginalFilename", "RIM 3.0.exe"
+            VALUE "ProductName", "<RIM3.0>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DOCKDLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_SETDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+    END
+
+    IDD_SETDLG_SYSTEMSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_SETDLG_CUSTOMSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_TOOLVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 136
+    END
+
+    IDD_CHATBKDLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 533
+        BOTTOMMARGIN, 326
+    END
+
+    IDD_LOGONWNDDLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 268
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME1 MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Toolbars and Docking Windows"
+        BEGIN
+            MENUITEM "<placeholder>",               ID_VIEW_TOOLBAR
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        POPUP "&Application Look"
+        BEGIN
+            MENUITEM "Windows &2000",               32771
+            MENUITEM "Office &XP",                  32772
+            MENUITEM "&Windows XP",                 32773
+            MENUITEM "Office 200&3",                32774
+            MENUITEM "Visual Studio.NET 200&5",     32775
+            POPUP "Office 200&7"
+            BEGIN
+                MENUITEM "&Blue Style",                 32776
+                MENUITEM "B&lack Style",                32777
+                MENUITEM "&Silver Style",               32778
+                MENUITEM "&Aqua Style",                 32779
+            END
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About single-doc...",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 RIM 3.0(&A)..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME1          "single-doc\n\nsingle-doc\n\n\nsingledoc.Document\nsingle-doc.Document"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\RIM30.rc2"  // ?¤? Microsoft Visual C++ ?à¨¤?-|ì??á¨o???
+#include "l.CHS\afxres.rc"      // ?à¨o?á??á¨|?t
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
