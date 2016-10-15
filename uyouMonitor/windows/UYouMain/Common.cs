@@ -138,6 +138,7 @@ namespace UYouMain.Common
     {
         BoxFlags_IsOpenDeviceControl = 1,
         BoxFlags_IsHorizontalMode = 2,
+        BoxFlags_ScreenShot = 3,
     };
 
     public enum HitTest : int

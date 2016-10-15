@@ -430,14 +430,25 @@ namespace UYouMain.ViewModel
         {
             VedioCtrlModel vedioctraddModel = obj as VedioCtrlModel;
 
-            VedioCtrlModel vedioMode        = new VedioCtrlModel();
-            vedioMode.IpString              = vedioctraddModel.IpString;
-            vedioMode.IsBusy                = true;
-            vedioMode.Remark                = vedioctraddModel.Remark;
-            vedioMode.deleteCommand         = new DelegateCommand<object>(new Action<object>(this.DeleteChidren));
-            vedioMode.connectCommand        = new DelegateCommand<object>(new Action<object>(this.Connect));
+            try
+            {
+                IPAddress addr = new IPAddress(0);
+                if(IPAddress.TryParse(vedioctraddModel.IpString, out addr))
+                {
+                    VedioCtrlModel vedioMode        = new VedioCtrlModel();
+                    vedioMode.IpString              = vedioctraddModel.IpString;
+                    vedioMode.IsBusy                = true;
+                    vedioMode.Remark                = vedioctraddModel.Remark;
+                    vedioMode.deleteCommand         = new DelegateCommand<object>(new Action<object>(this.DeleteChidren));
+                    vedioMode.connectCommand        = new DelegateCommand<object>(new Action<object>(this.Connect));
 
-            VedioCtrArray.Insert(VedioCtrArray.Count-1, vedioMode);
+                    VedioCtrArray.Insert(VedioCtrArray.Count-1, vedioMode);
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         public void Connect(object obj)

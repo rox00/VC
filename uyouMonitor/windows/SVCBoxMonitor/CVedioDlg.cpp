@@ -220,39 +220,52 @@ void CVedioDlg::OnPaint()
 				CRect rcClient;
 				GetClientRect(rcClient);
 
+				//if (g_IsHorizontalMode)
+				//{
+				//	CDC memDc;
+				//	memDc.CreateCompatibleDC(&dc);
+				//	memDc.SelectObject(m_hbitmap);
+
+				//	dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, SRCCOPY);
+				//}
+				//else
+				//{
+				//	Bitmap *pBmp	= Bitmap::FromHBITMAP(m_hbitmap, nullptr);
+
+				//	int newWidth	= m_pCodecCtx->height;
+				//	int newHeight	= m_pCodecCtx->width;
+				//	CBitmap newBitmap;
+				//	newBitmap.CreateCompatibleBitmap(&dc, newWidth, newHeight);
+
+				//	CDC newDc;
+				//	newDc.CreateCompatibleDC(&dc);
+				//	newDc.SelectObject(newBitmap);
+				//	Graphics graphics(newDc.GetSafeHdc());
+				//	graphics.RotateTransform(0, MatrixOrderAppend);
+				//	graphics.TranslateTransform(m_pCodecCtx->height, 0, MatrixOrderAppend);
+				//	graphics.DrawImage(pBmp, 0, 0, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, UnitPixel);
+
+				//	SetStretchBltMode(dc.m_hDC, HALFTONE);
+				//	dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &newDc, 0, 0, newWidth, newHeight, SRCCOPY);
+
+				//	delete pBmp;
+				//	graphics.ReleaseHDC(newDc.GetSafeHdc());
+				//	newBitmap.DeleteObject();
+				//	newDc.DeleteDC();
+				//}
+
+				CDC memDc;
+				memDc.CreateCompatibleDC(&dc);
+				memDc.SelectObject(m_hbitmap);
+
+				SetStretchBltMode(dc.m_hDC, HALFTONE);
 				if (g_IsHorizontalMode)
-				{
-					CDC memDc;
-					memDc.CreateCompatibleDC(&dc);
-					memDc.SelectObject(m_hbitmap);
-
-					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, SRCCOPY);
-				}
+					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->height, m_pCodecCtx->width, SRCCOPY);
 				else
-				{
-					Bitmap *pBmp	= Bitmap::FromHBITMAP(m_hbitmap, nullptr);
+					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, SRCCOPY);
 
-					int newWidth	= m_pCodecCtx->height;
-					int newHeight	= m_pCodecCtx->width;
-					CBitmap newBitmap;
-					newBitmap.CreateCompatibleBitmap(&dc, newWidth, newHeight);
+				memDc.DeleteDC();
 
-					CDC newDc;
-					newDc.CreateCompatibleDC(&dc);
-					newDc.SelectObject(newBitmap);
-					Graphics graphics(newDc.GetSafeHdc());
-					graphics.RotateTransform(90, MatrixOrderAppend);
-					graphics.TranslateTransform(m_pCodecCtx->height, 0, MatrixOrderAppend);
-					graphics.DrawImage(pBmp, 0, 0, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, UnitPixel);
-
-					SetStretchBltMode(dc.m_hDC, HALFTONE);
-					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &newDc, 0, 0, newWidth, newHeight, SRCCOPY);
-
-					delete pBmp;
-					graphics.ReleaseHDC(newDc.GetSafeHdc());
-					newBitmap.DeleteObject();
-					newDc.DeleteDC();
-				}
 				//////【zy 2015-12-30 ↓】
 				//{
 				//static int i= 0;
@@ -387,6 +400,77 @@ int CVedioDlg::SaveFrameToBMP(char *pPicFile, uint8_t *pRGBBuffer, int nWidth, i
 	fclose(fp);
 	return 0;
 }
+HBITMAP CVedioDlg::RotateBmp(bool bRotateLeft, BITMAPINFOHEADER bmpinfo, byte* pBmpData)
+{
+	int bmpHeight			= abs(bmpinfo.biHeight);
+	int bmpWidth			= abs(bmpinfo.biWidth);
+
+	int byteCount			= bmpinfo.biBitCount/8;													//一个像素几个字节
+	int iAddLineData		= (4 - (bmpHeight * byteCount) % 4) % 4;							//旋转后一行追加字节数
+
+	int eddySize			= (bmpHeight * byteCount + iAddLineData) * bmpWidth;		//旋转后需要多大内存
+	byte *bEddyData			= new byte[eddySize];
+
+	int bEddyDataRowCount	= bmpHeight * byteCount + iAddLineData;							//当前一行追加字节数
+
+	int iBmpAddLineData		= (4 - bmpWidth * byteCount % 4) % 4;								//旋转后一行需要追加几个字节
+
+	//对数据进行操作
+	int iImageSize			= (bmpWidth * byteCount + iBmpAddLineData) * bmpHeight;	//当前图像数据多大内存
+	for (int i = 0; i< bmpHeight; i++)
+	{
+
+		for (int j = 0; j < bmpWidth * byteCount; j += byteCount)
+		{
+			int bmDataIndex			= 0;
+			int bEddyDataRowIndex	= 0;		//旋转后行索引
+			int bEddyDataColIndex	= 0;		//旋转后列索引
+			int locIndex			= 0;		//旋转后内存中的索引值
+
+			if (bRotateLeft)
+			{
+				bmDataIndex			= (bmpWidth * byteCount + iBmpAddLineData) * i;				//当前像素所在当前图像数据中的内存位置
+				bEddyDataRowIndex	= (bmpWidth - 1 - (j / byteCount));							//旋转后该像素在行索引
+				bEddyDataColIndex	= i;																	//旋转后该像素在列索引
+				locIndex			= bEddyDataRowIndex  * (bmpHeight * byteCount + iAddLineData) + bEddyDataColIndex * byteCount;
+			}
+			else
+			{
+				bmDataIndex			= (bmpWidth * byteCount + iBmpAddLineData) * i;				//当前像素所在当前图像数据中的内存位置
+				bEddyDataRowIndex	= j / byteCount;														//旋转后该像素在行索引
+				bEddyDataColIndex	= bmpHeight - 1 - i;											//旋转后该像素在列索引
+				locIndex			= bEddyDataRowIndex  * (bmpHeight * byteCount + iAddLineData) + bEddyDataColIndex * byteCount;
+
+			}
+			bEddyData[locIndex]		= pBmpData[j+bmDataIndex];   //B
+			bEddyData[locIndex+1]	= pBmpData[j+bmDataIndex+1]; //G
+			bEddyData[locIndex+2]	= pBmpData[j+bmDataIndex+2]; //R
+
+		}
+	}
+	//byte * bTemp = bmData;
+	//bmData = bEddyData;
+	////删除临时信息
+	//deletebTemp;
+	////更改头文件信息
+	//bmpheader.bfSize				= bmpheader.bfOffBits + eddySize;
+
+	bmpinfo.biWidth					= bmpHeight;
+	bmpinfo.biHeight				= bmpinfo.biHeight > 0?bmpWidth : -bmpWidth;
+
+	CClientDC dc(NULL);
+	HBITMAP hBitmap					= CreateDIBitmap(dc.GetSafeHdc(),				//设备上下文的句柄 
+										(LPBITMAPINFOHEADER)&bmpinfo,				//位图信息头指针 
+										(long)CBM_INIT,								//初始化标志 
+										bEddyData,									//初始化数据指针 
+										(LPBITMAPINFO)&bmpinfo,						//位图信息指针 
+										DIB_RGB_COLORS);
+
+	delete[] bEddyData;
+
+
+	return hBitmap;
+}
 
 void CVedioDlg::SaveFrameToImg()
 {
@@ -427,7 +511,24 @@ void CVedioDlg::SaveFrameToImg()
 
 					sws_scale(img_convert_ctx, (const uint8_t* const*)m_pFrame->data, m_pFrame->linesize, 0, m_pCodecCtx->height, m_pFrameRGB->data, m_pFrameRGB->linesize);
 
-					//SaveFrameToBMP("1.bmp", m_pFrameRGB->data[0], m_pCodecCtx->width, m_pCodecCtx->height, 24);
+					if (g_bScreenShot)
+					{
+						TCHAR szTime[MAX_PATH] ={ 0 };
+						TCHAR szName[MAX_PATH] ={ 0 };
+						::GetModuleFileName(NULL, szName, sizeof(szName));
+
+						TCHAR * pName = _tcsrchr(szName, _T('\\')) + 1;
+						*pName = _T('\0');
+
+						SYSTEMTIME sysTime;   // Win32 time information
+						GetLocalTime(&sysTime);
+						COleDateTime dateTime(sysTime);
+						_stprintf_s(szTime, MAX_PATH, _T("%02d_%02d_%02d.bmp"), dateTime.GetHour(), dateTime.GetMinute(), dateTime.GetSecond());
+						_tcscat_s(szName, MAX_PATH, szTime);
+
+						SaveFrameToBMP(CT2A(szName), m_pFrameRGB->data[0], m_pCodecCtx->width, m_pCodecCtx->height, 24);
+						g_bScreenShot = FALSE;
+					}
 
 					{
 						BITMAPFILEHEADER bmpheader;
@@ -454,15 +555,22 @@ void CVedioDlg::SaveFrameToImg()
 						bmpinfo.biClrUsed		= 0;
 						bmpinfo.biClrImportant	= 0;
 
-						CClientDC dc(NULL);
 						if (m_hbitmap)
 							::DeleteObject(m_hbitmap);
-						m_hbitmap = CreateDIBitmap(dc.GetSafeHdc(),							//设备上下文的句柄 
-							(LPBITMAPINFOHEADER)&bmpinfo,				//位图信息头指针 
-							(long)CBM_INIT,								//初始化标志 
-							m_pFrameRGB->data[0],						//初始化数据指针 
-							(LPBITMAPINFO)&bmpinfo,						//位图信息指针 
-							DIB_RGB_COLORS);							//颜色数据的使用方式 
+						if (g_IsHorizontalMode)
+						{
+							m_hbitmap = RotateBmp(true, bmpinfo, m_pFrameRGB->data[0]);
+						}
+						else
+						{
+							CClientDC dc(NULL);
+							m_hbitmap = CreateDIBitmap(dc.GetSafeHdc(),							//设备上下文的句柄 
+								(LPBITMAPINFOHEADER)&bmpinfo,				//位图信息头指针 
+								(long)CBM_INIT,								//初始化标志 
+								m_pFrameRGB->data[0],						//初始化数据指针 
+								(LPBITMAPINFO)&bmpinfo,						//位图信息指针 
+								DIB_RGB_COLORS);							//颜色数据的使用方式 
+						}
 
 						::InvalidateRect(m_hWnd, NULL, FALSE);
 					}

@@ -342,8 +342,8 @@ namespace UYouMain.ViewModel
             _CtrlType                           = type;
 
             version                             = "";
-            ipString                            = "";
-            remark                              = "";
+            ipString                            = "127.0.0.1";
+            remark                              = "测试设备";
             isBusy                              = false;
             isFindDevice                        = false;
             statusText                          = "无法获取设备信息!";
@@ -352,11 +352,11 @@ namespace UYouMain.ViewModel
             progressValue                       = 0;
             isProgressing                       = false;
 
-            if(type == VedioCtrlType.VedioCtrlType_Device)
-            {
-                ipString    = "127.0.0.1";
-                remark      = "测试设备";
-            }
+            //if(type == VedioCtrlType.VedioCtrlType_Add)
+            //{
+            //    ipString    = "127.0.0.1";
+            //    remark      = "测试设备";
+            //}
 
             LoadCommand                         = new DelegateCommand<object>(new Action<object>(this.ViewLoaded));
             leftMouseClickCommand               = new DelegateCommand<object>(new Action<object>(this.OnLeftMouseDown));

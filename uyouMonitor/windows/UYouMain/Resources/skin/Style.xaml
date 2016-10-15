@@ -204,7 +204,7 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <TextBox Text="{Binding Path=Remark, Mode=TwoWay}" Grid.Column="1" BorderThickness="0" Background="Transparent" HorizontalAlignment="Center" TextAlignment="Left"></TextBox>
+                    <TextBox Text="{Binding Path=Remark, Mode=TwoWay}" Grid.Column="1" BorderThickness="0" Background="Transparent" HorizontalAlignment="Stretch" TextAlignment="Left"></TextBox>
                 </Grid>
                 <Rectangle  Grid.Row="1" x:Name="lightRect" Fill="White"></Rectangle>
                 <TextBlock Text="双击新增监控设备" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" x:Name="statusBlock"></TextBlock>

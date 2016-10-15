@@ -19,9 +19,12 @@ enum BoxFlags
 {
 	BoxFlags_IsOpenDeviceControl = 1,
 	BoxFlags_IsHorizontalMode = 2,
+	BoxFlags_ScreenShot = 3,
+
 };
 extern BOOL										g_IsOpenDeviceControl;
 extern BOOL										g_IsHorizontalMode;
+extern BOOL										g_bScreenShot;
 extern long										g_currentDeviceWidth;
 extern long										g_currentDeviceHeight;
 

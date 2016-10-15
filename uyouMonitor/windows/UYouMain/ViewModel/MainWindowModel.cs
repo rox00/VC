@@ -254,28 +254,29 @@ namespace UYouMain.ViewModel
         #endregion
 
 
-        public DelegateCommand<object> rotateCommand { get; set; }
-        public DelegateCommand<object> LoadCommand { get; set; }
-        public DelegateCommand<object> ExitCommand { get; set; }
-        public DelegateCommand<object> MaxCommand { get; set; }
-        public DelegateCommand<object> NormalCommand { get; set; }
-        public DelegateCommand<object> MinCommand { get; set; }
-        public DelegateCommand<object> UpdateWndPosCommand { get; set; }
-        public DelegateCommand<object> ActiviListWndCommand { get; set; }
-        public DelegateCommand<object> ActiviKeyMapWndCommand { get; set; }
-        public DelegateCommand<object> SynClipboardCommand { get; set; }
-        public DelegateCommand<object> DragWndCommand { get; set; }
-        public DelegateCommand<object> SaveKeyMappingCommand { get; set; }
-        public DelegateCommand<object> TaskCommand { get; set; }
-        public DelegateCommand<object> HomeCommand { get; set; }
-        public DelegateCommand<object> BackCommand { get; set; }
-        public DelegateCommand<object> DeviceControlCommand { get; set; }
+        public DelegateCommand<object>              rotateCommand { get; set; }
+        public DelegateCommand<object>              LoadCommand { get; set; }
+        public DelegateCommand<object>              ExitCommand { get; set; }
+        public DelegateCommand<object>              MaxCommand { get; set; }
+        public DelegateCommand<object>              NormalCommand { get; set; }
+        public DelegateCommand<object>              MinCommand { get; set; }
+        public DelegateCommand<object>              UpdateWndPosCommand { get; set; }
+        public DelegateCommand<object>              ActiviListWndCommand { get; set; }
+        public DelegateCommand<object>              ActiviKeyMapWndCommand { get; set; }
+        public DelegateCommand<object>              SynClipboardCommand { get; set; }
+        public DelegateCommand<object>              DragWndCommand { get; set; }
+        public DelegateCommand<object>              SaveKeyMappingCommand { get; set; }
+        public DelegateCommand<object>              TaskCommand { get; set; }
+        public DelegateCommand<object>              HomeCommand { get; set; }
+        public DelegateCommand<object>              BackCommand { get; set; }
+        public DelegateCommand<object>              DeviceControlCommand { get; set; }
+        public DelegateCommand<object>              ScreenShotCommand { get; set; }
         public MainWindowModel()
         {
             _vedioListModel                         = new VedioListModel();
             _waitWndModel                           = new WaitWndModel();
             _keyMAPModel                            = new KeyMapModel();
-            isHorizontalMode                        = true;
+            isHorizontalMode                        = false;
             wndState                                = WindowState.Normal;
             title                                   = ShowTitleVersion("");
             conStatuText                            = "已断开连接";
@@ -329,6 +330,7 @@ namespace UYouMain.ViewModel
             HomeCommand                             = new DelegateCommand<object>(new Action<object>(this.Home));
             BackCommand                             = new DelegateCommand<object>(new Action<object>(this.Back));
             DeviceControlCommand                    = new DelegateCommand<object>(new Action<object>(this.DeviceControlOpenClose));
+            ScreenShotCommand                       = new DelegateCommand<object>(new Action<object>(this.ScreenShot));
             
         }
 
@@ -374,13 +376,19 @@ namespace UYouMain.ViewModel
         }
         private void SaveConfig()
         {
-            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Config));
+            try
+            {
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Config));
 
-            Debug.WriteLine(GetType() + ":" + "save config info");
-            Stream stream = new FileStream(_configFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
-            serializer.WriteObject(stream, _config);
-            stream.Close();
-
+                Debug.WriteLine(GetType() + ":" + "save config info");
+                Stream stream = new FileStream(_configFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
+                serializer.WriteObject(stream, _config);
+                stream.Close();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(GetType() + ":" + ex.Message);
+            }
         }
         private void LoadKeyMapping()
         {   //同步  映射数据和映射开关
@@ -472,6 +480,12 @@ namespace UYouMain.ViewModel
         {
             boxControl.SetFlag(Convert.ToInt32(Common.BoxFlags.BoxFlags_IsOpenDeviceControl), _vedioListModel.WndVisible == Visibility.Hidden?1:0);
         }
+
+        private void ScreenShot(object obj)
+        {
+            boxControl.SetFlag(Convert.ToInt32(Common.BoxFlags.BoxFlags_ScreenShot), 1);
+        }
+
         private void SynClipboard(object obj)
         {
             if (IsConnect)
@@ -656,14 +670,15 @@ namespace UYouMain.ViewModel
             {
                 if (IsHorizontalMode)
                 {
-                    _vedioListModel.Rotate(4);
+                    //_vedioListModel.Rotate(4);
                     boxControl.UpdateDeviceSize(Common.Common.boxSize.Width, Common.Common.boxSize.Height); //盒子内部分辨率
                 }
                 else
                 {
-                    _vedioListModel.Rotate(3);
+                    //_vedioListModel.Rotate(3);
                     boxControl.UpdateDeviceSize(Common.Common.boxSize.Height, Common.Common.boxSize.Width); //盒子内部分辨率
                 }
+                boxControl.SetFlag((int)Common.BoxFlags.BoxFlags_IsHorizontalMode, Convert.ToInt32(IsHorizontalMode));
 
 
                 LoadConfig();
@@ -717,6 +732,7 @@ namespace UYouMain.ViewModel
                     WindowTop   = (System.Windows.SystemParameters.PrimaryScreenHeight - WindowHeight) /2;
 
 
+                    boxControl.SetFlag((int)Common.BoxFlags.BoxFlags_IsHorizontalMode, Convert.ToInt32(IsHorizontalMode));
                     _vedioListModel.Rotate(3);
                     boxControl.UpdateDeviceSize(Common.Common.boxSize.Height, Common.Common.boxSize.Width); //盒子内部分辨率
                 }

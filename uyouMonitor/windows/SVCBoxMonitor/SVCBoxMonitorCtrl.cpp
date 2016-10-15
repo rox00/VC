@@ -585,6 +585,10 @@ void CSVCBoxMonitorCtrl::SetFlag(LONG nFlag, LONG value)
 			break;
 		case BoxFlags_IsHorizontalMode:
 			g_IsHorizontalMode = value;
+			break;
+		case  BoxFlags_ScreenShot:
+			g_bScreenShot = value;
+			break;
 		default:
 			break;
 	}

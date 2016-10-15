@@ -40,6 +40,7 @@
     <Window.InputBindings>
         <KeyBinding Key="Escape" Command="{Binding NormalCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
         <KeyBinding Key="F4" Modifiers="Alt"  Command="{Binding ExitCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        <KeyBinding Key="B" Modifiers="Control+Alt"  Command="{Binding ScreenShotCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
     </Window.InputBindings>
     <Window.Resources>
         <WindowsFormsHost x:Key="Root" x:Name="host" AllowDrop="True" SnapsToDevicePixels="True" Width="0" Height="0">

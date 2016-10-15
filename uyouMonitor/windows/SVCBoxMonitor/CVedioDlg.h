@@ -12,7 +12,7 @@ using namespace Gdiplus;
 extern "C"
 {
 	#include <libavutil/opt.h>
-	#include<libavcodec/avcodec.h>
+	#include <libavcodec/avcodec.h>
 	#include <libavformat/avformat.h>
 	#include <libswscale/swscale.h>
 	#include <libswresample/swresample.h>
@@ -103,4 +103,5 @@ public:
 	void											Stop();
 	void											SendTouchScreenMessage(boost::asio::const_buffer& Buffer);
 	void											SendInputMethodOperationMessage(boost::asio::const_buffer& Buffer);
+	HBITMAP											RotateBmp(bool bRotateLeft, BITMAPINFOHEADER bmpinfo, byte* pBmpData);
 };
