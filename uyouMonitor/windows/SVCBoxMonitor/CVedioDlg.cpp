@@ -260,9 +260,9 @@ void CVedioDlg::OnPaint()
 
 				SetStretchBltMode(dc.m_hDC, HALFTONE);
 				if (g_IsHorizontalMode)
-					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->height, m_pCodecCtx->width, SRCCOPY);
-				else
 					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->width, m_pCodecCtx->height, SRCCOPY);
+				else
+					dc.StretchBlt(rcClient.left, rcClient.top, rcClient.Width(), rcClient.Height(), &memDc, 0, 0, m_pCodecCtx->height, m_pCodecCtx->width, SRCCOPY);
 
 				memDc.DeleteDC();
 
@@ -559,10 +559,6 @@ void CVedioDlg::SaveFrameToImg()
 							::DeleteObject(m_hbitmap);
 						if (g_IsHorizontalMode)
 						{
-							m_hbitmap = RotateBmp(true, bmpinfo, m_pFrameRGB->data[0]);
-						}
-						else
-						{
 							CClientDC dc(NULL);
 							m_hbitmap = CreateDIBitmap(dc.GetSafeHdc(),							//设备上下文的句柄 
 								(LPBITMAPINFOHEADER)&bmpinfo,				//位图信息头指针 
@@ -570,6 +566,10 @@ void CVedioDlg::SaveFrameToImg()
 								m_pFrameRGB->data[0],						//初始化数据指针 
 								(LPBITMAPINFO)&bmpinfo,						//位图信息指针 
 								DIB_RGB_COLORS);							//颜色数据的使用方式 
+						}
+						else
+						{
+							m_hbitmap = RotateBmp(false, bmpinfo, m_pFrameRGB->data[0]);
 						}
 
 						::InvalidateRect(m_hWnd, NULL, FALSE);
