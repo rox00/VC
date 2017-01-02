@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RIM 3.0", "RIM 3.0.vcproj", "{3520DCA1-495C-453C-8303-7BCFC6A5F33E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RIM30ToolKit", "..\..\sdk\RIM30ToolKit\RIM30ToolKit.vcproj", "{4DADFA6A-05E6-4828-9BBA-D1D32BCD2AD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3520DCA1-495C-453C-8303-7BCFC6A5F33E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3520DCA1-495C-453C-8303-7BCFC6A5F33E}.Debug|Win32.Build.0 = Debug|Win32
+		{3520DCA1-495C-453C-8303-7BCFC6A5F33E}.Release|Win32.ActiveCfg = Release|Win32
+		{3520DCA1-495C-453C-8303-7BCFC6A5F33E}.Release|Win32.Build.0 = Release|Win32
+		{4DADFA6A-05E6-4828-9BBA-D1D32BCD2AD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4DADFA6A-05E6-4828-9BBA-D1D32BCD2AD5}.Debug|Win32.Build.0 = Debug|Win32
+		{4DADFA6A-05E6-4828-9BBA-D1D32BCD2AD5}.Release|Win32.ActiveCfg = Release|Win32
+		{4DADFA6A-05E6-4828-9BBA-D1D32BCD2AD5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

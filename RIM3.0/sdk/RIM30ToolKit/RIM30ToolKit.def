@@ -1,0 +1,37 @@
+; RIM30ToolKit.def : 定义模块参数。
+
+EXPORTS
+	QueryAllStation
+	QueryAllDevice
+	QueryAllRtmDeviceFunc
+	QueryAllRTMRefDeviceFunc
+	QueryAllComRegionNo
+	QueryAllRtmRefDeviceProtocol
+	QueryAllRimRefStationType
+	QueryAllRimRefDeviceType
+	QueryAllRtmMonOrg
+	QueryAllRtmMonCtrlCenter
+	QueryAllRtmAnt
+	QueryAllRtmStationDeviceFuncAnt
+	QueryAllRtmRefDeviceModel
+	QueryAllRtmRefDeviceModelFuncParam
+	QueryAllRtmRnc
+	QueryAllComAuthSysDataStation
+	QueryAllComAuthSysFunc
+	QueryAllRIM30UserInfo
+	QueryAllRIM30BranchInfo
+	
+;**********************以下是扩展方法******************
+
+	UpdateDataBySql
+	QueryStationGroupByFuncID
+	QueryRegionGroupByFuncID
+	QueryStationName
+	QueryFuncName
+	QueryStationTypeName
+	QueryMonOrg
+	QueryStation
+	QueryDevice
+	QueryDeviceModelFuncParam
+	IsRtmGroup
+	QueryRegionName
